@@ -33,7 +33,7 @@ const build = async ({ bundle, render, ssr })=>{
 	}, function(e, output) {
 		fs.outputFile('./build/themes/5ePhbLegacy.style.css', output.css);
 	});
-	src = './themes/5ePhb.style.less';
+	src = './themes/CoC.style.less';
 	less.render(fs.readFileSync(src).toString(), {
 		compress : !isDev
 	}, function(e, output) {

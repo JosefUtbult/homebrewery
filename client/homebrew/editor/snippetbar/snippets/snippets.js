@@ -8,6 +8,7 @@ const CoverPageGen = require('./coverpage.gen.js');
 const TableOfContentsGen = require('./tableOfContents.gen.js');
 const dedent = require('dedent-tabs').default;
 const watercolorGen = require('./watercolor.gen.js');
+const cocCharacterGen = require('./CoCCharacter.gen')
 
 
 module.exports = [
@@ -72,7 +73,7 @@ module.exports = [
 			{
 				name : 'Link to page',
 				icon : 'fas fa-link',
-				gen  : '[Click here](#p3) to go to page 3\n'
+				gen  : '[Click here](#p3) to go to page 3 Hello\n'
 			},
 			{
 				name : 'Table of Contents',
@@ -83,7 +84,7 @@ module.exports = [
 				name : 'Add Comment',
 				icon : 'fas fa-code',
 				gen  : '<!-- This is a comment that will not be rendered into your brew. Hotkey (Ctrl/Cmd + /). -->'
-			},
+			}
 		]
 	},
 	{
@@ -248,6 +249,11 @@ module.exports = [
 						\n`;
 				},
 			},
+			{
+				name : 'CoC - Character',
+				icon : 'fas fa-mask',
+				gen : cocCharacterGen
+			}
 		]
 	},
 
