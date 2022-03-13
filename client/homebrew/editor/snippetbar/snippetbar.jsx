@@ -9,6 +9,7 @@ const cx    = require('classnames');
 const Themes = {};
 Themes['Legacy_5ePHB'] = require('themes/Legacy/5ePHB/snippets.js');
 Themes['V3_5ePHB']     = require('themes/V3/5ePHB/snippets.js');
+Themes['V3_CallOfCthulhu']     = require('themes/V3/CallOfCthulhu/snippets.js');
 
 const execute = function(val, brew){
 	if(_.isFunction(val)) return val(brew);
@@ -42,7 +43,9 @@ const Snippetbar = createClass({
 	componentDidMount : async function() {
 		const rendererPath = this.props.renderer == 'V3' ? 'V3' : 'Legacy';
 		const themePath    = this.props.theme ?? '5ePHB';
-		const snippets = Themes[`${rendererPath}_${themePath}`];
+		// const snippets = Themes[`${rendererPath}_${themePath}`];
+		/* TODO: Remove this when theme snippets are working correctly */
+		const snippets = Themes['V3_CallOfCthulhu'];
 		this.setState({
 			snippets : snippets
 		});
@@ -52,7 +55,9 @@ const Snippetbar = createClass({
 		if(prevProps.renderer != this.props.renderer) {
 			const rendererPath = this.props.renderer == 'V3' ? 'V3' : 'Legacy';
 			const themePath    = this.props.theme ?? '5ePHB';
-			const snippets = Themes[`${rendererPath}_${themePath}`];
+			// const snippets = Themes[`${rendererPath}_${themePath}`];
+			/* TODO: Remove this when theme snippets are working correctly */
+			const snippets = Themes['V3_CallOfCthulhu'];
 			this.setState({
 				snippets : snippets
 			});

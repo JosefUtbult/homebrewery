@@ -19,6 +19,12 @@
       "renderer": "V3",
       "baseTheme": false,
       "path": "5ePHB"
+    },
+    {
+      "name": "Call of Cthulhu",
+      "renderer": "V3",
+      "baseTheme": false,
+      "path": "CallOfCthulhu"
     }
   ]
 }
