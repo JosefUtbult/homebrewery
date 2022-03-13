@@ -1,70 +1,126 @@
 const _ = require('lodash');
 const dedent = require('dedent-tabs').default;
+const statsgenerator = require('../statsgenerator').generate;
+
+const generateMonsterStats = function (multiplier) {
+	return Math.floor(Math.random() * multiplier / 5) * 5 + 10;
+};
+
+/* TODO: This can probably be made more clever */
+const generateName = function () {
+	const NAMECHARACTERS = 'AUOZS\' EIYRGHT';
+	let name = '';
+	const nameLen = Math.floor(Math.random() * 10) + 3;
+	for (let i = 0; i < nameLen; i++){
+		name += NAMECHARACTERS.charAt(Math.random() * NAMECHARACTERS.length);
+	}
+	return name;
+};
+
+const generateTitle = function () {
+	return `The ${_.sample([
+		'flame',
+		'rock',
+		'ghost',
+		'entity',
+		'wanderer'
+	])} of ${_.sample([
+		'Sol',
+		'the stars',
+		'the mountain',
+		'Portsmouth',
+		'the cabinet in out kitchen'
+	])}`;
+};
+
+const generateAttacks = function (name, damageBonus) {
+	const res = [];
+	while (res.length < 3) {
+		const attack = _.sample([
+			`**Long fingers** : ${name} can choose to tickle you from a long distance as its 
+				fingers reach far and wide. Its otherworldly tickles causes ${damageBonus} in damage.`,
+			`**Weird smell** : ${name} smells kinda funky. Like something that's been in the pantry 
+				for too long. Horrid enough to make you puke, which takes ${damageBonus} of physical damage.`,
+			`**Damn tentacles** : ${name} has long, black tentacles protruding from its body. It can use 
+				these to grapple one investigator each round. A grappled investigator needs to make a 
+				strength check against ${name}'s strength in order to brake free, or the grapple deals 
+				${damageBonus} in damage each round.`,
+			`**Fire breath** : ${name} can cast Fireball from its mouth. An investigator hit by a ball of flame
+				takes ${damageBonus} of damage, and receives severe burns.`,
+			`**Scrotum pinch** : ${name} may use telekinesis in order to pinch an investigators scrotum. This does
+				(regardless of the investigators gender) a great deal of pain, ${damageBonus} of physical damage, 
+				and will leave the investigator paralyzed for 3 turns.`,
+			`**Ice shards** : ${name} can materialize ice shards which it will hurl at great speeds. An investigator
+				that is hit by them takes ${damageBonus} of blunt damage and ${damageBonus} of cold damage.`
+		]);
+		if(!res.includes(attack)) {
+			res.push(attack);
+		}
+	}
+	return res;
+};
 
 module.exports = ()=>{
-    return dedent `
+	const name = generateName();
+
+	// Randomize stats where the damage bonus is positive
+	let stats;
+	do {
+		// Should multiply all stats with a randomized value mapped to an exponential in order to make less powerful
+		// monster more common, and powerful ones rare
+		const multiplier = Math.floor(Math.exp(Math.random() * 6.9)) + 40;
+		stats = statsgenerator({
+			'str' : generateMonsterStats(multiplier),
+			'con' : generateMonsterStats(multiplier),
+			'siz' : generateMonsterStats(multiplier),
+			'dex' : generateMonsterStats(multiplier),
+			'int' : generateMonsterStats(multiplier),
+			'pow' : generateMonsterStats(multiplier)
+		});
+	} while (stats['str'] + stats['siz'] < 204);
+
+	const attacks = generateAttacks(name, stats['damageBonus']);
+
+	return dedent `
         {{cocCharacter
         
         {{cocStatsBlock
         
-        ### CTHUGHA
+        ### ${name}
         
-        The Living Flame
+        ${generateTitle()}
         
         |         |         |         |
         | ------- | ------- | ------- |
-        | STR 400 | CON 600 | SIZ 700 |
-        | DEX 105 | INT 105 | POW 210 | 
+        | STR ${stats['str']} | CON ${stats['con']} | SIZ ${stats['siz']} |
+        | DEX ${stats['dex']} | INT ${stats['int']} | POW ${stats['pow']} | 
         
         }}
         
-        **Hit Points**        ::: 130
-        **Damage Bonus**      ::: +13D6
-        **Attacks per round** ::: 3
-        **Build**             ::: 14
-        **Magic Points**      ::: 42
-        **Move**              ::: 0 (aerial drift)
+        **Hit Points**        ::: ${stats['hitPoints']}
+        **Damage Bonus**      ::: ${stats['damageBonus']}
+        **Attacks per round** ::: ${Math.floor(Math.random() * 5) + 1}
+        **Build**             ::: ${stats['build']}
+        **Magic Points**      ::: ${Math.floor(Math.random() * 100) + 1}
+        **Move**              ::: ${stats['mov']}
         
         
         ### Attacks
         
-        **Fighting attacks**: Each round, Cthugha can form pseudopods
-        from its formless mass with which to flail or squeeze individual
-        targets.
+        ${attacks[0]}
         
-        **Automatic Scorch**: Summoned, Cthugha brings 1D100 x10 flame
-        vampires with it, which immediately begin to set the area alight.
-        Cthugha itself floats above, scorching and burning the entire
-        site. Humans in the area lose hit points to the heat, starting
-        in the round after Cthugha comes. Each round the players
-        must attempt to roll CON. Upon failure, the investigator loses
-        1 hit point per round until death. The only way to survive is
-        to flee the area—a roughly circular area with a diameter of
-        2D10 x 20 yards. Cthugha does not depart until that area has
-        been thoroughly blasted and burned, unless first
-        dismissed by means of a spell
+        ${attacks[1]}
         
-        **Flame Burst**: Cthugha may belch forth fire
-        instead of using pseudopods. A flame
-        bust has a range of 150 yards and blankets
-        the target site with fire, incinerating an
-        area 20 yards across. Investigators within
-        the area must attempt an Extreme CON
-        roll (rolling equal to or below one-fifth
-        of their CON): a failed roll indicates
-        incineration. A success indicates 1D10
-        hit point loss. Body armor is of no help
-        against this attack, but an intervening wall
-        or embankment would be.
+        ${attacks[2]}
         
-        **Armor**: 14 points of armor. Weapons that come into contact with Cthugha are destroyed.
+        **Armor**: ${stats['con']} points of armor.
         
-        **Spells**: All spells concerning entities of flame and itself.
+        **Spells**: All spells concerning the nature of ${name}.
         
-        **Sanity Loss**: 1D3/1D20 Sanity points to see Cthugha.
+        **Sanity Loss**: 1D10/1D100 Sanity points to see ${name}.
         
         }}
     
-`
+`;
 
 };

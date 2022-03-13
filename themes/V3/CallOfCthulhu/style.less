@@ -865,8 +865,13 @@ body {
 }
 
 .titleQuote {
-  border-top: solid thin rgba(75, 75, 75, 0.6);
+  border-top: solid thin @headerUnderline;
   padding-top: 0.6em;
+  margin-bottom: 1.2em;
+}
+
+.titleQuote.wide {
+  margin-bottom: 3.2em;
 }
 
 .titleQuote p {
@@ -878,3 +883,5 @@ body {
   margin-top: 1em;
   text-align: right;
 }
+
+

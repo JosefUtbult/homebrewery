@@ -1,5 +1,6 @@
 const _ = require('lodash');
 const dedent = require('dedent-tabs').default;
+const statsgenerator = require('../statsgenerator').generate;
 
 const getCharacterNameAndHome = function () {
 	return _.sample([
@@ -297,80 +298,24 @@ const getHobbie = function () {
 	]);
 };
 
-const getStat = function () {
+const generateHumanStat = function () {
 	return Math.floor(Math.random() * (80) / 5) * 5 + 15;
-};
-
-const getStats = function () {
-	const str = getStat();
-	const siz = getStat();
-	const dex = getStat();
-	const con = getStat();
-	const int = getStat();
-	const app = getStat();
-	const pow = getStat();
-	const edu = getStat();
-
-	let damageBonus;
-	let build;
-
-	if(str + siz <= 64) {
-		damageBonus = '-2';
-		build = -1;
-	} else if(str + siz <= 84) {
-		damageBonus = '-1';
-		build = -1;
-	} else if(str + siz <= 124) {
-		damageBonus = '-';
-		build = 0;
-	} else if(str + siz <= 164) {
-		damageBonus = '+1D4';
-		build = 1;
-	} else if(str + siz <= 204) {
-		damageBonus = '+1D6';
-		build = 2;
-	} else {
-		const multiplier = Math.floor((str + siz - 204) / 80);
-		damageBonus = `+${1 + multiplier}D6`;
-		build = 2 + multiplier;
-	}
-
-	const hitPoints = Math.floor((con + siz) / 10);
-
-	let mov;
-
-	if(dex < siz && str < siz) {
-		mov = 7;
-	} else if((dex < siz && str >= siz) ||
-        (dex >= siz && str < siz) ||
-        (dex === siz && str === siz)
-	) {
-		mov = 8;
-	} else {
-		mov = 9;
-	}
-
-	return {
-		'str'         : str,
-		'con'         : con,
-		'siz'         : siz,
-		'dex'         : dex,
-		'int'         : int,
-		'app'         : app,
-		'pow'         : pow,
-		'edu'         : edu,
-		'hitPoints'   : hitPoints,
-		'damageBonus' : damageBonus,
-		'build'       : build,
-		'mov'         : mov
-	};
 };
 
 module.exports = ()=>{
 	const person = getCharacterNameAndHome();
 	const occupation = getOccupation();
 
-	const stats = getStats();
+	const stats = statsgenerator({
+		'str' : generateHumanStat(),
+		'con' : generateHumanStat(),
+		'siz' : generateHumanStat(),
+		'dex' : generateHumanStat(),
+		'int' : generateHumanStat(),
+		'app' : generateHumanStat(),
+		'pow' : generateHumanStat(),
+		'edu' : generateHumanStat()
+	});
 
 	const hobby1 = getHobbie();
 	let hobby2;
@@ -400,11 +345,11 @@ module.exports = ()=>{
         **Move**         ::: ${stats['mov']}
         
         **Skills** 
-        ${getSkill()} : ${getStat()}%, 
+        ${getSkill()} : ${generateHumanStat()}%, 
         
-        ${getSkill()} : ${getStat()}%, 
+        ${getSkill()} : ${generateHumanStat()}%, 
         
-        ${getSkill()} : ${getStat()}%
+        ${getSkill()} : ${generateHumanStat()}%
             
         }}
         
