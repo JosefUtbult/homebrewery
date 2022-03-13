@@ -8,7 +8,9 @@ const CoverPageGen = require('./coverpage.gen.js');
 const TableOfContentsGen = require('./tableOfContents.gen.js');
 const dedent = require('dedent-tabs').default;
 const watercolorGen = require('./watercolor.gen.js');
-const cocCharacterGen = require('./CoCCharacter.gen')
+const cocCharacterGen = require('./CoCCharacter.gen');
+const cocMonsterblockGen = require('./CoCMonsterblock.gen');
+const titleQuoteGen = require('./titleQuote.gen');
 
 
 module.exports = [
@@ -248,12 +250,38 @@ module.exports = [
 						}}
 						\n`;
 				},
+			}
+		]
+	},
+
+	/*****************  Call of Cthulhu ******************/
+
+	{
+		groupName : 'CoC',
+		/* TODO: Change icon */
+		icon      : 'fas fa-eye',
+		view      : 'text',
+		snippets  : [
+			{
+				name : 'Wide title quote',
+				icon : 'fas fa-quote-right',
+				gen : titleQuoteGen.quote('wide')
+			},
+			{
+				name : 'Title quote',
+				icon : 'fas fa-quote-left',
+				gen : titleQuoteGen.quote('')
 			},
 			{
 				name : 'CoC - Character',
 				icon : 'fas fa-mask',
 				gen : cocCharacterGen
-			}
+			},
+			{
+				name : 'CoC - Monsterblock',
+				icon : 'fas fa-spider',
+				gen : cocMonsterblockGen
+			},
 		]
 	},
 
