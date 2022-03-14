@@ -8,13 +8,13 @@ const generateMonsterStats = function (multiplier) {
 
 /* TODO: This can probably be made more clever */
 const generateName = function () {
-	const NAMECHARACTERS = 'AUOZS\' EIYRGHT';
+	const NAMECHARACTERS = 'auozs\' eiyrght';
 	let name = '';
 	const nameLen = Math.floor(Math.random() * 10) + 3;
 	for (let i = 0; i < nameLen; i++){
 		name += NAMECHARACTERS.charAt(Math.random() * NAMECHARACTERS.length);
 	}
-	return name;
+	return name.charAt(0).toUpperCase() + name.slice(1);
 };
 
 const generateTitle = function () {
@@ -29,7 +29,7 @@ const generateTitle = function () {
 		'the stars',
 		'the mountain',
 		'Portsmouth',
-		'the cabinet in out kitchen'
+		'the cabinet in our kitchen'
 	])}`;
 };
 
