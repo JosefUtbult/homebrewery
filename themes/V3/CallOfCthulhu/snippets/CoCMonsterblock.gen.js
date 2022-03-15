@@ -97,12 +97,12 @@ module.exports = ()=>{
         
         }}
         
-        **Hit Points**        ::: ${stats['hitPoints']}
-        **Damage Bonus**      ::: ${stats['damageBonus']}
-        **Attacks per round** ::: ${Math.floor(Math.random() * 5) + 1}
-        **Build**             ::: ${stats['build']}
-        **Magic Points**      ::: ${Math.floor(Math.random() * 100) + 1}
-        **Move**              ::: ${stats['mov']}
+        **Hit Points**        : ${stats['hitPoints']}
+        **Damage Bonus**      : ${stats['damageBonus']}
+        **Attacks per round** : ${Math.floor(Math.random() * 5) + 1}
+        **Build**             : ${stats['build']}
+        **Magic Points**      : ${Math.floor(Math.random() * 100) + 1}
+        **Move**              : ${stats['mov']}
         
         
         ### Attacks
@@ -117,7 +117,7 @@ module.exports = ()=>{
         
         **Spells**: All spells concerning the nature of ${name}.
         
-        **Sanity Loss**: 1D10/1D100 Sanity points to see ${name}.
+        **Sanity Loss**: An investigator that sees ${name} takes a 1D10/1D100 of sanity loss.
         
         }}
     

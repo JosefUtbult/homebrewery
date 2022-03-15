@@ -51,7 +51,6 @@ const getQuote = function () {
 };
 
 module.exports = {
-
 	quote : function (classes) {
 		const _quote = getQuote();
 		return dedent `
@@ -61,7 +60,7 @@ module.exports = {
            	
            	${_quote[1]} 
             
-            — ${_quote[2]}
+            ###### ${_quote[2]}
             
             }}
             

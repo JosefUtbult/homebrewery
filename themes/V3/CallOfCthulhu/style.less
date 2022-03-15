@@ -3,7 +3,7 @@
 @import (less) './themes/fonts/CoC/fonts.less';
 
 //Colors
-@background              : #eae9e5; // Lighter parchment
+@background              : rgba(255, 255, 255, 0.3); // Lighter parchment
 @noteGreen               : #e2dcdf; // Light purple
 @headerUnderline         : #8d8187; // Gray purple
 @horizontalRule          : #9c2b1b; // Maroon
@@ -77,6 +77,7 @@ body {
   text-rendering    : optimizeLegibility;
   page-break-before : always;
   page-break-after  : always;
+
   //*****************************
   // *            BASE
   // *****************************/
@@ -145,11 +146,20 @@ body {
     font-size      : smaller;
     line-height    : 0;
   }
+
+  a{
+    color           : inherit;
+    text-decoration : none;
+    &:hover{
+      color: red;
+    }
+  }
+
   //*****************************
   // *           HEADERS
   // *****************************/
-  h1,h2,h3,h4, h5, h6{
-    font-family   : MrEavesRemake;
+  h1, h2, h3, h4{
+    font-family   : Prata;
     font-weight   : 800;
     text-align: center;
   }
@@ -160,9 +170,9 @@ body {
     color         : @subHeaderText;
   }
   h1{
-    margin-bottom       : 0.18cm; //Margin-bottom only because this is WIDE
+    margin-bottom       : .22cm; //Margin-bottom only because this is WIDE
     column-span         : all;
-    font-size           : 0.89cm;
+    font-size           : .89cm;
     -webkit-column-span : all;
     -moz-column-span    : all;
     &+p::first-letter{
@@ -187,26 +197,18 @@ body {
     }
   }
   h2{
-    //margin-top    : 0px; //Font is misaligned. Shift up slightly
-    //margin-bottom : 0.05cm;
     font-size     : 0.75cm;
-    line-height   : 0.988em; //Font is misaligned. Shift up slightly
+    margin-bottom: .2cm;
   }
   h3{
-    //margin-top    : -0.1cm; //Font is misaligned. Shift up slightly
-    //margin-bottom : 0.1cm;
     font-size     : 0.575cm;
-    border-bottom : none;
+    margin-bottom: .16cm;
   }
   h4{
-    //margin-top    : -0.02cm; //Font is misaligned. Shift up slightly
-    //margin-bottom : 0.02cm;
     font-size     : 0.458cm;
-    line-height   : 0.971em; //Font is misaligned. Shift up slightly
+    margin-bottom: .12cm;
   }
   h5{
-    //margin-top    : -0.02cm; //Font is misaligned. Shift up slightly
-    //margin-bottom : 0.02cm;
     font-family   : ScalySansSmallCapsRemake;
     font-size     : 0.423cm;
     font-weight   : 900;
@@ -247,62 +249,30 @@ body {
   // *            NOTE
   // *****************************/
   .note{
-    .useSansSerif();
-    background-color    : @noteGreen;
+    margin: 0 0 2em 0;
+    background-color: @background;
     border-style        : solid;
-    border-width        : 1px;
-    border-image        : @noteBorderImage 12 stretch;
-    border-image-outset : 9px 0px;
-    border-image-width  : 11px;
+    border-color        : transparent;
+    border-width        : 4px;
+    /* TODO: Make a nicer frame, add wide note style */
+    border-image        : @CoCFramePurple 25 fill;
+    border-image-outset : 14px 0px;
+    border-image-width  : 1.5em;
     padding             : 0.13cm 0.16cm;
-    filter              : drop-shadow(1px 4px 6px #888);
-    .page :where(&) {
-      margin-top        : 9px; //Prevent top border getting cut off on colbreak
-    }
-    & + * {
-      margin-top : 0.45cm;
-    }
-    h5 {
-      font-size : 0.375cm;
-    }
-    p{
-      display        : block;
-      padding-bottom : 0px;
-    }
-    :last-child {
-      margin-bottom : 0;
-    }
   }
   //************************************
   // *       DESCRIPTIVE TEXT BOX
   // ************************************/
   .descriptive{
-    .useSansSerif();
-    background-color    : #faf7ea;
-    border-style        : solid;
-    border-width        : 7px;
-    border-image        : @descriptiveBoxImage 12 stretch;
-    border-image-outset : 4px;
-    padding             : 0.1em;
-    filter              : drop-shadow(0 0 3px #faf7ea);
-    .page :where(&) {
-      margin-top        : 4px; //Prevent top border getting cut off on colbreak
-    }
-    & + * {
-      margin-top : 0.45cm;
-    }
-    h5 {
-      font-size : 0.375cm;
-    }
-    p{
-      display        : block;
-      padding-bottom : 0px;
-      line-height    : 1.5em;
-    }
-    :last-child {
-      margin-bottom : 0;
-    }
+    font-family: Inconsolata, serif;
+    padding: 1em 1.2em;
+    margin: .5em 0 3em 0;
+    /* TODO: Add nicer frame */
+    border-left: solid thin @headerUnderline;
+    border-right: solid thin @headerUnderline;
+    background-color: @background;
   }
+
   //*****************************
   // *    Images Snippets
   // *****************************/
@@ -351,7 +321,7 @@ body {
     transform       : rotate(-45deg);
     z-index         : 500;
     p {
-      margin-bottom : none;
+      margin-bottom : 0;
     }
   }
 
@@ -386,100 +356,6 @@ body {
   .watercolor12 { --wc : @watercolor12; }
 
   //*****************************
-  // *    MONSTER STAT BLOCK
-  // *****************************/
-  .monster {
-    .useSansSerif();
-    &.frame {
-      border-style          : solid;
-      border-width          : 7px 6px;
-      background-color      : @characterStatBackground;
-      background-image      : @characterStatBackground;
-      border-image          : @monsterBorderImage 14 round;
-      border-image-outset   : 0px 2px;
-      background-blend-mode : overlay;
-      background-attachment : fixed;
-      filter                : drop-shadow(1px 4px 6px #888);
-      padding               : 4px 2px;
-      margin-left           : -0.16cm;
-      margin-right          : -0.16cm;
-      width                 : calc(100% + 0.32cm);
-    }
-
-    position          : relative;
-    padding           : 0px;
-    margin-bottom     : 0.325cm;
-
-    //Headers
-    h2{
-      font-size     : 0.62cm;
-      line-height   : 1em;
-      margin        : 0;
-      &+p {
-        font-size     : 0.304cm; //Monster size and type subtext
-        margin-bottom : 0;
-      }
-    }
-    h3{
-      font-family    : ScalySansRemake;
-      font-weight    : 800;
-      font-variant   : small-caps;
-      border-bottom  : 2px solid @headerText;
-      // margin-top     : 0.05cm;  //Font is misaligned. Shift up slightly
-      padding-bottom : 0.05cm;
-    }
-
-    //Triangle dividers
-    hr{
-      visibility       : visible;
-      height           : 6px;
-      margin           : 0.12cm 0cm;
-      background-image : @redTriangleImage;
-      background-size  : 100% 100%;
-      border           : none;
-    }
-
-    //Attribute Lists - All text between HRs is red
-    hr ~ :is(dl,p) {
-      color : @headerText;
-    }
-    hr:last-of-type {
-      & ~ :is(dl,p) {
-        color : inherit; // After the HRs, reset text to black
-      }
-      & + * {
-        margin-top : 0.325cm; // Space after last HR
-      }
-    }
-
-    // Monster Ability table
-    hr + table:first-of-type{
-      margin              : 0;
-      column-span         : none;
-      color               : @headerText;
-      background-color    : transparent;
-      border-style        : none;
-      border-image        : none;
-      -webkit-column-span : none;
-      tr {
-        background-color : transparent;
-      }
-      td,th {
-        padding: 0px;
-      }
-    }
-
-    :last-child {
-      margin-bottom : 0;
-    }
-  }
-
-  //Full Width
-  .monster.wide{
-    .useColumns(0.96, @fillMode: balance);
-  }
-
-  //*****************************
   // *           FOOTER
   // *****************************/
   &:after{
@@ -490,7 +366,6 @@ body {
     z-index          : 100;
     height           : 50px;
     width            : 100%;
-    background-image : @footerAccentImage;
     background-size  : cover;
   }
   &:nth-child(even){
@@ -596,81 +471,7 @@ body {
     break-inside                : avoid;
   }
 }
-//*****************************
-// *         SPELL LIST
-// *****************************/
-.page .spellList{
-  .useSansSerif();
-  column-count        : 2;
-  ul+h5{
-    margin-top : 15px;
-  }
-  p, ul{
-    font-size   : 0.352cm;
-    line-height : 1.265em;
-  }
-  ul{
-    margin-bottom               : 0.5em;
-    padding-left                : 1em;
-    text-indent                 : -1em;
-    list-style-type             : none;
-    -webkit-column-break-inside : auto;
-    page-break-inside           : auto;
-    break-inside                : auto;
-  }
-  &.wide{
-    column-count : 4;
-  }
-}
 
-//*****************************
-// *       CLASS TABLE
-// *****************************/
-.page .classTable{
-  th[colspan]:not([rowspan]) {
-    white-space : nowrap;
-  }
-  &.frame {
-    margin-top          : 0.66cm;
-    margin-bottom       : 1.05cm;
-    margin-left         : -0.1cm;
-    margin-right        : -0.1cm;
-    width               : calc(100% + 0.2cm);
-    border-collapse     : separate;
-    background-color    : white;
-    border              : initial;
-    border-style        : solid;
-    border-image-outset : 0.55cm 0.3cm;
-    border-image-repeat : stretch;
-    border-image-slice  : 200;
-    border-image-source : @frameBorderImage;
-    border-image-width  : 47px;
-  }
-  &.decoration {
-    transform-style : preserve-3d;
-  }
-  &.decoration::before {
-    content           :'';
-    position          : absolute;
-    background-image  : @classTableDecoration;
-    background-size   : contain;
-    background-repeat : space;
-    width             : 7.75cm;
-    height            : calc(100% + 3.3cm);
-    top               : 50%;
-    left              : 50%;
-    transform         : translateY(-50%) translateX(-50%) translateZ(-1px);
-    filter            : drop-shadow(0px 0px 1px #C8C5C080)
-  }
-  &.decoration.wide::before {
-    width             : calc(100% + 3.3cm);
-    height            : 7.75cm;
-    top               : calc(50% + 0.4cm);
-  }
-  h5 + table{
-    margin-top : 0.2cm;
-  }
-}
 //*****************************
 // *      TABLE OF CONTENTS
 // *****************************/
@@ -679,30 +480,53 @@ body {
   page-break-inside           : avoid;
   break-inside                : avoid;
 
-:
-  h3 {
-    text-align    : center;
-    margin-bottom : 0.3cm;
+  background-color: @background;
+  border-style        : solid;
+  border-width        : 4px;
+  border-color        : transparent;
+  /* TODO: Make a nicer frame, change to wide frame */
+  border-image        : @CoCFrameBlack 25 fill;
+  border-image-outset : 14px 0px;
+  border-image-width  : 1.5em;
+
+  padding: 2em 1em;
+
+  h1 {
+    margin-bottom: .6em;
   }
-  h3 > span {
-    color: @subHeaderText;
-  }
-  h4, h5, h6 {
+
+  h3, h4, h5, h6, span {
     text-align: left;
   }
-  h4 > span,
-  h5 > span,
-  h6 > span {
-    color: @headerText;
+
+  h4, h5, h6, span {
+    font-family: SpecialElite;
   }
-  a{
-    display         : table;
-    color           : inherit;
-    text-decoration : none;
-    &:hover{
-      text-decoration : underline;
-    }
+
+  h3 {
+    font-size: 0.45cm;
+    margin-top: 0.8cm;
+    margin-bottom : 0.3cm;
+    border-bottom: solid thin @subHeaderText;
   }
+  h3 span {
+    font-family   : Prata !important;
+  }
+
+  h4 {
+    font-size: 0.4cm;
+    margin-bottom: .12cm;
+  }
+
+  h5 {
+    font-size: 0.3cm;
+    margin-bottom: .08cm;
+  }
+
+  h4, h5, h6 {
+    color: @headerText !important;
+  }
+
   h4 {
     margin-top  : 0.2cm;
     line-height : 0.4cm;
@@ -712,7 +536,7 @@ body {
   }
 
   ul{
-    padding-left    : 0;
+    padding-left    : 1em;
     list-style-type : none;
     li::before {
       display: none;
@@ -739,7 +563,6 @@ body {
         }
       }
       &:last-child {
-        font-family    : BookInsanityRemake;
         font-size      : 0.34cm;
         font-weight    : normal;
         color          : black;
@@ -831,39 +654,64 @@ body {
   }
 }
 
+//*****************************
+// *  Character/Monster block
+// *****************************/
+
 .cocCharacter {
   margin-bottom: 1.5em;
 }
 
 .cocStatsBlock {
   text-align: center;
-  margin: 0 0 2em 0;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-style        : solid;
-  border-width        : 4px;
-  border-color        : transparent;
+  margin: 1em 0 3em 0;
+  background-color: @background;
+  border-style: solid;
+  border-width: 4px;
+  border-color: transparent;
   /* TODO: Make a nicer frame */
-  border-image        : @cocFrame 25 fill;
-  border-image-outset : 14px 0px;
-  border-image-width  : 1.5em;
-  padding             : 0.13cm 0.16cm;
-}
+  border-image: @CoCFrameBlack 25 fill;
+  border-image-outset: 14px 0px;
+  border-image-width: 1.5em;
+  padding: 0.13cm 0.16cm;
 
-.cocStatsBlock h1,
-.cocStatsBlock h2,
-.cocStatsBlock h3,
-.cocStatsBlock h4,
-.cocStatsBlock h5,
-.cocStatsBlock h6{
-  border-bottom: none;
-}
+  h1, h2, h3, h4, h5, h6 {
+    border-bottom: none;
+    font-family: NotoSerifDisplay;
+  }
 
-.cocStatsBlock table tbody tr:nth-child(odd){
-  background-color: @noteGreen;
-}
+  h1 {
+    font-size: .7cm;
+    margin-bottom: .22cm;
+  }
 
-.cocStatsBlock table tbody tr td:nth-child(even){
-  padding: .07em;
+  h2 {
+    font-size: 0.55cm;
+    margin-bottom: .2cm;
+  }
+
+  h3 {
+    font-size: 0.45cm;
+    margin-bottom: .16cm;
+  }
+
+  h4 {
+    font-size: 0.4cm;
+    margin-bottom: .12cm;
+  }
+
+  h5 {
+    font-size: 0.3cm;
+    margin-bottom: .08cm;
+  }
+
+  table tbody tr:nth-child(odd) {
+    background-color: @noteGreen;
+  }
+
+  table tbody tr td:nth-child(even) {
+    padding: .07em;
+  }
 }
 
 .cocCharacter p strong:not(:first-child){
@@ -881,27 +729,121 @@ ol+.cocCharacter p{
 }
 
 .cocCharacter p {
-  padding-left: 1em;
-  text-indent: -1em;
+  padding-left: 1em !important;
+  text-indent: -1em !important;
 }
+
+// *****************************
+// *       Title Quote
+// *****************************/
 
 .titleQuote {
   border-top: solid thin @headerUnderline;
   padding-top: 0.6em;
   margin-bottom: 1.2em;
+
+  p {
+    font-family: SpecialElite;
+    margin: 0 10% .6em;
+
+    text-indent: 0 !important;
+  }
+
+  h6 {
+    font-family: SpecialElite;
+    color: black;
+    margin: 0 10% .6em;
+    text-align: right;
+  }
+  h6:before {
+    content: "-";
+  }
 }
 
 .titleQuote.wide {
   margin-bottom: 3.2em;
 }
 
-.titleQuote p {
-  font-family: SpecialElite, serif;
-  margin: 0 10% .6em;
+// *****************************
+// *       Letter
+// *****************************/
+
+.page .letter {
+  background-image: @backgroundImage;
+  padding: 2em;
+
+  border: thin solid rgba(255, 255, 255, .1);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  margin-bottom: 2em;
+
+  h1, h2, h3, h4, h5, h6, p {
+    font-family: Tangerine;
+    color: #0d1431;
+  }
+  h1 {
+    font-size: 1.2cm;
+    margin-bottom: .22cm;
+  }
+
+  h2 {
+    font-size: 1cm;
+    margin-bottom: .2cm;
+  }
+
+  h3 {
+    font-size: .85cm;
+    margin-bottom: .16cm;
+  }
+
+  h4 {
+    font-size: .7cm;
+    margin-bottom: .12cm;
+  }
+
+  h5 {
+    font-size: .55cm;
+    margin-bottom: .08cm;
+  }
+  p {
+    padding-left: 0 !important;
+    text-indent: 0 !important;
+    font-size: .55cm;
+    margin-bottom: .02cm;
+  }
+  h6 {
+    font-size: .55cm;
+    margin: 0 10% .6em;
+    text-align: right;
+  }
 }
 
-.titleQuote p:last-child {
-  margin-top: 1em;
-  text-align: right;
-}
+// *****************************
+// *           Bok
+// *****************************/
 
+.page .book {
+  background-image: @backgroundImage;
+  padding: 2em;
+
+  border: solid rgba(255, 255, 255, .1);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  margin-bottom: 2em;
+
+  h1, h2, h3, h4, h5, h6, p {
+    font-family: SpecialElite;
+    color: black;
+  }
+
+  h6 {
+    margin: .6em 0;
+    text-align: right;
+  }
+
+  h6:before {
+    content: "-";
+  }
+}

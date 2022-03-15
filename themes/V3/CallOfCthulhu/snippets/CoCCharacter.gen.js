@@ -339,21 +339,20 @@ module.exports = ()=>{
         
         }}
         
-        **Hit Points**   ::: ${stats['hitPoints']}
-        **Damage Bonus** ::: ${stats['damageBonus']}
-        **Build**        ::: ${stats['build']}
-        **Move**         ::: ${stats['mov']}
+        **Hit Points**   : ${stats['hitPoints']}
         
-        **Skills** 
-        ${getSkill()} : ${generateHumanStat()}%, 
+        **Damage Bonus** : ${stats['damageBonus']}
         
-        ${getSkill()} : ${generateHumanStat()}%, 
+        **Build**        : ${stats['build']}
         
-        ${getSkill()} : ${generateHumanStat()}%
-            
-        }}
+        **Move**         : ${stats['mov']}
         
         :
+        
+        **Skills** : ${getSkill()} : ${generateHumanStat()}%, ${getSkill()} : ${generateHumanStat()}%, 
+        ${getSkill()} : ${generateHumanStat()}%, ${getSkill()} : ${generateHumanStat()}%
+            
+        }}
         
         _${person['name']}_ is a ${occupation} from ${person['home']}. ${person['name'].replace(/ .*/, '')} likes ${hobby1} and ${hobby2}.`;
 };
