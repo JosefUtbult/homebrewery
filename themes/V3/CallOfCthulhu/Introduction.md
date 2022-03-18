@@ -1,3 +1,25 @@
+{{toc,wide
+# Table Of Contents
+
+- ### [{{ The Homebrewery - Call of Cthulhu}}{{ 2}}](#p2)
+  - #### [{{ The adventure begins}}{{ 2}}](#p2)
+  - #### [{{ Letters}}{{ 2}}](#p2)
+  - #### [{{ Later in the Library}}{{ 3}}](#p3)
+  - #### [{{ Books}}{{ 3}}](#p3)
+- ### [{{ Characters and Monsters}}{{ 4}}](#p4)
+  - [{{ The Programmer}}{{ 4}}](#p4)
+  - [{{  The Programmer - Arthropod form}}{{ 4}}](#p4)
+- ### [{{ The end}}{{ 4}}](#p4)
+
+}}
+
+{{pageNumber 1}}
+
+
+
+
+\page
+
 # The Homebrewery - Call of Cthulhu
 
 {{titleQuote,wide
@@ -96,14 +118,16 @@ and long spider-like legs unveils themselves from under his damp cloths.
 You run towards your car as the creature hisses "I will describe this as a monster
 later in this document!"
 
+{{pageNumber 2}}
+{{footnote PART 1 | THE ADVENTURE BEGINS}}
+
 \page
 
-# Later in the Library
+## Later in the Library
 
 As you frantically look through the shelves at you local library in a
 maddened state, to understand what it was you saw that evening, you stumble upon
-a book. Note by the way that the first letter and line of this paragraph is
-stylized, as it is the first text after a large heading.
+a book.
 
 {{book
 
@@ -135,6 +159,9 @@ sixth level heading to specify an author.
 you've been reading it. As you try to make out if this book was here by chans or if
 it was put here as a trap, you can see in the periphery of your vision
 a long arthropod leg reach for you from the top of the bookshelf...
+
+{{pageNumber 3}}
+{{footnote PART 1 | THE ADVENTURE BEGINS}}
 
 \page
 
@@ -242,8 +269,11 @@ takes a 1D10/3D10 of sanity loss.
 
 }}
 
-### The end
+# The end
 
 I hope that this theme can be of use to you in your Call of Cthulhu adventures. This
 theme uses original open source assets, that are inspired by the publisher _Elsos_
 [_Call of Cthulhu Sverige_](https://eloso.se/coc-sverige) books.
+
+{{pageNumber 4}}
+{{footnote PART 2 | CHARACTERS AND MONSTERS}}

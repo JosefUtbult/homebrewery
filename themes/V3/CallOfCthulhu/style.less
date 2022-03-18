@@ -1,6 +1,6 @@
 @import (less) './themes/assets/assets.less';
 @import (less) './themes/fonts/5e/fonts.less';
-@import (less) './themes/fonts/CoC/fonts.less';
+@import (less) './themes/fonts/CallOfCthulhu/fonts.less';
 
 //Colors
 @background              : rgba(255, 255, 255, 0.3); // Lighter parchment
@@ -149,7 +149,7 @@ body {
 
   a{
     color           : inherit;
-    text-decoration : none;
+    text-decoration : underline;
     &:hover{
       color: red;
     }
@@ -175,10 +175,14 @@ body {
     font-size           : .89cm;
     -webkit-column-span : all;
     -moz-column-span    : all;
+
+    // This doesn't really look that good. If a better font could be found, the first letter style would be nice
+    /*
     &+p::first-letter{
       float                   : left;
-      // TODO: Add a different fist letter font
-      font-family             : Tangerine;
+      // TODO: Add a different fist letter font that doesn't get behind the other characters
+      // in the paragraph
+      font-family             : Sacramento;
       line-height             : 1em;
       font-size               : 3.5cm;
       padding-left            : 40px; //Allow background color to extend into margins
@@ -186,6 +190,7 @@ body {
       margin-top              : -0.3cm;
       padding-bottom          : 2px;
       margin-bottom           : 0;
+      /* The following should be added again when a different font is applied
       background: rgb(13,20,49);
       background: linear-gradient(125deg, rgba(13,20,49,1) 0%, rgba(13,20,49,1) 76%, rgba(13,20,49,0.2) 100%);
       background-clip         : text;
@@ -195,14 +200,21 @@ body {
     &+p::first-line{
       font-variant : small-caps;
     }
+    */
   }
   h2{
     font-size     : 0.75cm;
     margin-bottom: .2cm;
   }
+  p + h2 {
+    margin-top: .8em
+  }
   h3{
     font-size     : 0.575cm;
     margin-bottom: .16cm;
+  }
+  p + h3 {
+    margin-top: .8em;
   }
   h4{
     font-size     : 0.458cm;
@@ -259,6 +271,11 @@ body {
     border-image-outset : 14px 0px;
     border-image-width  : 1.5em;
     padding             : 0.13cm 0.16cm;
+
+    h1, h2, h3, h4, h5 {
+      text-align: center;
+    }
+
   }
   //************************************
   // *       DESCRIPTIVE TEXT BOX
@@ -271,6 +288,10 @@ body {
     border-left: solid thin @headerUnderline;
     border-right: solid thin @headerUnderline;
     background-color: @background;
+
+    h1, h2, h3, h4, h5 {
+      text-align: center;
+    }
   }
 
   //*****************************
@@ -368,27 +389,22 @@ body {
     width            : 100%;
     background-size  : cover;
   }
-  &:nth-child(even){
-    &:after{
-      transform : scaleX(-1);
-    }
-    .pageNumber{
-      left : 2px;
-    }
-    .footnote{
-      left       : 80px;
-      text-align : left;
-    }
-  }
   .pageNumber{
     position    : absolute;
-    right       : 2px;
+    right       : calc(50% - 16px);
     bottom      : 22px;
-    width       : 50px;
-    font-size   : 0.9em;
-    color       : #c9ad6a;
+    width       : 32px;
+    height      : 32px;
+    padding-top : 8px;
+    font-size   : 16px;
+
+    border: thin solid @subHeaderText;
+    border-radius: 50%;
+
+    color       : @subHeaderText;
     text-align  : center;
     text-indent : 0;
+
     &.auto::after {
       content : counter(phb-page-numbers);
     }
@@ -400,7 +416,7 @@ body {
     z-index    : 150;
     width      : 200px;
     font-size  : 0.8em;
-    color      : #c9ad6a;
+    color      : @subHeaderText;
     text-align : right;
   }
   //************************************
@@ -505,17 +521,23 @@ body {
 
   h3 {
     font-size: 0.45cm;
-    margin-top: 0.8cm;
+    margin-top: 1cm;
     margin-bottom : 0.3cm;
     border-bottom: solid thin @subHeaderText;
-  }
-  h3 span {
-    font-family   : Prata !important;
+
+    span {
+      font-family   : Prata !important;
+      padding-top: 2px;
+    }
   }
 
   h4 {
     font-size: 0.4cm;
     margin-bottom: .12cm;
+
+    span {
+      padding-top: 2px;
+    }
   }
 
   h5 {
