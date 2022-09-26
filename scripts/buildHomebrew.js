@@ -51,6 +51,8 @@ const build = async ({ bundle, render, ssr })=>{
 	// 	} : false),
 	// })
 
+	await fs.copy('./client/homebrew/favicon.ico', './build/assets/favicon.ico');
+
 	//compress files in production
 	if(!isDev){
 		await fs.outputFile('./build/homebrew/bundle.css.br', zlib.brotliCompressSync(css));
@@ -79,20 +81,20 @@ pack('./client/homebrew/homebrew.jsx', {
 	//v==----------------------------- COMPILE THEMES --------------------------------==v//
 
 	// Update list of all Theme files
-	const themes = { Legacy: [], V3: [] };
+	const themes = { Legacy: {}, V3: {} };
 
 	let themeFiles = fs.readdirSync('./themes/Legacy');
 	for (dir of themeFiles) {
 		const themeData = JSON.parse(fs.readFileSync(`./themes/Legacy/${dir}/settings.json`).toString());
 		themeData.path = dir;
-		themes.Legacy.push(themeData);
+		themes.Legacy[dir] = (themeData);
 		//fs.copy(`./themes/Legacy/${dir}/dropdownTexture.png`, `./build/themes/Legacy/${dir}/dropdownTexture.png`);
 		const src = `./themes/Legacy/${dir}/style.less`;
 		((outputDirectory)=>{
 			less.render(fs.readFileSync(src).toString(), {
 				compress : !isDev
 			}, function(e, output) {
-				fs.outputFile(`./build/themes/Legacy/${dir}/style.css`, output.css);
+				fs.outputFile(outputDirectory, output.css);
 			});
 		})(`./build/themes/Legacy/${dir}/style.css`);
 
@@ -102,7 +104,7 @@ pack('./client/homebrew/homebrew.jsx', {
 	for (dir of themeFiles) {
 		const themeData = JSON.parse(fs.readFileSync(`./themes/V3/${dir}/settings.json`).toString());
 		themeData.path = dir;
-		themes.V3.push(themeData);
+		themes.V3[dir] = (themeData);
 		fs.copy(`./themes/V3/${dir}/dropdownTexture.png`, `./build/themes/V3/${dir}/dropdownTexture.png`);
 		const src = `./themes/V3/${dir}/style.less`;
 	  ((outputDirectory)=>{

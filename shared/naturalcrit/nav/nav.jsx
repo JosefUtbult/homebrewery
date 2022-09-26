@@ -78,7 +78,24 @@ const Nav = {
 				showDropdown : false
 			};
 		},
+<<<<<<< HEAD
 
+=======
+		componentDidMount : function() {
+			if(this.props.trigger == 'click')
+				document.addEventListener('click', this.handleClickOutside);
+		},
+		componentWillUnmount : function() {
+			if(this.props.trigger == 'click')
+				document.removeEventListener('click', this.handleClickOutside);
+		},
+		handleClickOutside : function(e){
+			// Close dropdown when clicked outside
+			if(this.refs.dropdown && !this.refs.dropdown.contains(e.target)) {
+				this.handleDropdown(false);
+			}
+		},
+>>>>>>> 4750f248 (Merge)
 		handleDropdown : function(show){
 			this.setState({
 				showDropdown : show
@@ -102,10 +119,19 @@ const Nav = {
 				return child;
 			});
 			return (
+<<<<<<< HEAD
 				<div className='navDropdownContainer'
 					onMouseEnter={()=>this.handleDropdown(true)}
 					onMouseLeave={()=>this.handleDropdown(false)}>
 					{this.props.children[0]}
+=======
+				<div className={`navDropdownContainer ${this.props.className}`}
+					ref='dropdown'
+					onMouseEnter={this.props.trigger == 'hover' ? ()=>{this.handleDropdown(true);} : undefined}
+					onClick=     {this.props.trigger == 'click' ? ()=>{this.handleDropdown(true);} : undefined}
+					onMouseLeave={this.props.trigger == 'hover' ? ()=>{this.handleDropdown(false);} : undefined}>
+					{this.props.children[0] || this.props.children /*children is not an array when only one child*/}
+>>>>>>> 4750f248 (Merge)
 					{this.renderDropdown(dropdownChildren)}
 				</div>
 			);

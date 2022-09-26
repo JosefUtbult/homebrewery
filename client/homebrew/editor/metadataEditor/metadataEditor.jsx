@@ -7,6 +7,8 @@ const request = require('superagent');
 
 const SYSTEMS = ['5e', '4e', '3.5e', 'Pathfinder'];
 
+const homebreweryThumbnail = require('../../thumbnail.png');
+
 const MetadataEditor = createClass({
 	displayName     : 'MetadataEditor',
 	getDefaultProps : function() {
@@ -25,6 +27,26 @@ const MetadataEditor = createClass({
 		};
 	},
 
+<<<<<<< HEAD
+=======
+	getInitialState : function(){
+		return {
+			showThumbnail : true
+		};
+	},
+
+	toggleThumbnailDisplay : function(){
+		this.setState({
+			showThumbnail : !this.state.showThumbnail
+		});
+	},
+
+	renderThumbnail : function(){
+		if(!this.state.showThumbnail) return;
+		return <img className='thumbnail-preview' src={this.props.metadata.thumbnail || homebreweryThumbnail}></img>;
+	},
+
+>>>>>>> 4750f248 (Merge)
 	handleFieldChange : function(name, e){
 		this.props.onChange(_.merge({}, this.props.metadata, {
 			[name] : e.target.value
@@ -59,7 +81,7 @@ const MetadataEditor = createClass({
 			if(!confirm('Are you REALLY sure? You will lose editor access to this document.')) return;
 		}
 
-		request.delete(`/api/${this.props.metadata.editId}`)
+		request.delete(`/api/${this.props.metadata.googleId ?? ''}${this.props.metadata.editId}`)
 			.send()
 			.end(function(err, res){
 				window.location.href = '/';
@@ -116,6 +138,47 @@ const MetadataEditor = createClass({
 		</div>;
 	},
 
+<<<<<<< HEAD
+=======
+	renderThemeDropdown : function(){
+		const listThemes = (renderer)=>{
+			return _.map(_.values(Themes[renderer]), (theme)=>{
+				console.log(theme);
+				return <div className='item' key={''} onClick={()=>this.handleTheme(theme)} title={''}>
+					{`${theme.renderer} : ${theme.name}`}
+					<img src={`/themes/${theme.renderer}/${theme.path}/dropdownTexture.png`}/>
+				</div>;
+			});
+		};
+
+		const currentTheme = Themes[`${_.upperFirst(this.props.metadata.renderer)}`][this.props.metadata.theme];
+		let dropdown;
+
+		if(this.props.metadata.renderer == 'legacy') {
+			dropdown =
+				<Nav.dropdown className='disabled' trigger='disabled'>
+					<div>
+						{`Themes are not supported in the Legacy Renderer`} <i className='fas fa-caret-down'></i>
+					</div>
+				</Nav.dropdown>;
+		} else {
+			dropdown =
+				<Nav.dropdown trigger='click'>
+					<div>
+						{`${_.upperFirst(currentTheme.renderer)} : ${currentTheme.name}`} <i className='fas fa-caret-down'></i>
+					</div>
+					{/*listThemes('Legacy')*/}
+					{listThemes('V3')}
+				</Nav.dropdown>;
+		}
+
+		return <div className='field themes'>
+			<label>theme</label>
+			{dropdown}
+		</div>;
+	},
+
+>>>>>>> 4750f248 (Merge)
 	renderRenderOptions : function(){
 		if(!global.enable_v3) return;
 
@@ -161,6 +224,18 @@ const MetadataEditor = createClass({
 				<label>description</label>
 				<textarea value={this.props.metadata.description} className='value'
 					onChange={(e)=>this.handleFieldChange('description', e)} />
+			</div>
+			<div className='field thumbnail'>
+				<label>thumbnail</label>
+				<input type='text'
+					value={this.props.metadata.thumbnail}
+					placeholder='my.thumbnail.url'
+					className='value'
+					onChange={(e)=>this.handleFieldChange('thumbnail', e)} />
+				<button className='display' onClick={this.toggleThumbnailDisplay}>
+					<i className={`fas fa-caret-${this.state.showThumbnail ? 'right' : 'left'}`} />
+				</button>
+				{this.renderThumbnail()}
 			</div>
 			{/*}
 			<div className='field tags'>
