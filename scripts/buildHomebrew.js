@@ -78,7 +78,7 @@ fs.emptyDirSync('./build');
 				compress : !isDev
 			}, function(e, output) {
 				if(e) {
-					console.log(`Error rendering less file for "${dir}": ${e}`)
+					console.log(`Error rendering less file for "${src}": ${e}`)
 				}
 				fs.outputFile(outputDirectory, output.css);
 			});
