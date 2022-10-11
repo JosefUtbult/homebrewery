@@ -14,6 +14,7 @@ ThemeSnippets['V3_5ePHB']     = require('themes/V3/5ePHB/snippets.js');
 ThemeSnippets['V3_5eDMG']     = require('themes/V3/5eDMG/snippets.js');
 ThemeSnippets['V3_Journal']   = require('themes/V3/Journal/snippets.js');
 ThemeSnippets['V3_Blank']     = require('themes/V3/Blank/snippets.js');
+ThemeSnippets['V3_CoCKH']     = require('themes/V3/CoCKH/snippets.js');
 
 const execute = function(val, brew){
 	if(_.isFunction(val)) return val(brew);

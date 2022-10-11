@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const dedent = require('dedent-tabs').default;
-const statsgenerator = require('../statsgenerator').generate;
+const statsgenerator = require('./statsgenerator').generate;
 
 const getCharacterNameAndHome = function () {
 	return _.sample([

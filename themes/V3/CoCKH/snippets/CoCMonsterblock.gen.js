@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const dedent = require('dedent-tabs').default;
-const statsgenerator = require('../statsgenerator').generate;
+const statsgenerator = require('./statsgenerator').generate;
 
 const generateMonsterStats = function (multiplier) {
 	return Math.floor(Math.random() * multiplier / 5) * 5 + 10;

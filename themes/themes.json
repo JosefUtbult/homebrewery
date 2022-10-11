@@ -29,6 +29,20 @@
       "baseSnippets": false,
       "path": "Blank"
     },
+    "CoCFancy": {
+      "name": "CoC SE",
+      "renderer": "V3",
+      "baseTheme": "CoCKH",
+      "baseSnippets": "CoCKH",
+      "path": "CoCFancy"
+    },
+    "CoCKH": {
+      "name": "CoC KH",
+      "renderer": "V3",
+      "baseTheme": "Blank",
+      "baseSnippets": false,
+      "path": "CoCKH"
+    },
     "Journal": {
       "name": "Journal",
       "renderer": "V3",
