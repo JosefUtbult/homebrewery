@@ -77,6 +77,9 @@ fs.emptyDirSync('./build');
 			less.render(fs.readFileSync(src).toString(), {
 				compress : !isDev
 			}, function(e, output) {
+				if(e) {
+					console.log(`Error rendering less file for "${dir}": ${e}`)
+				}
 				fs.outputFile(outputDirectory, output.css);
 			});
 		})(`./build/themes/V3/${dir}/style.css`);
