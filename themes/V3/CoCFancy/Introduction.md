@@ -1,25 +1,3 @@
-{{toc,wide
-# Table Of Contents
-
-- ### [{{ The Homebrewery - Call of Cthulhu}}{{ 2}}](#p2)
-  - #### [{{ The adventure begins}}{{ 2}}](#p2)
-  - #### [{{ Letters}}{{ 2}}](#p2)
-  - #### [{{ Later in the Library}}{{ 3}}](#p3)
-  - #### [{{ Books}}{{ 3}}](#p3)
-- ### [{{ Characters and Monsters}}{{ 4}}](#p4)
-  - [{{ The Programmer}}{{ 4}}](#p4)
-  - [{{  The Programmer - Arthropod form}}{{ 4}}](#p4)
-- ### [{{ The end}}{{ 4}}](#p4)
-
-}}
-
-{{pageNumber 1}}
-
-
-
-
-\page
-
 # The Homebrewery - Call of Cthulhu
 
 {{titleQuote,wide
@@ -96,6 +74,13 @@ a descriptive box instead.
 }}
 
 
+\page
+
+{{page-header
+PART 1 | THE ADVENTURE BEGINS
+}}
+
+
 As you read the descriptive text box, the weird creature on the ground reaches out
 towards you and hands you a torn up piece of paper. On that paper there is some
 text in a way better handwriting than you would assume from a programmer.
@@ -119,9 +104,12 @@ You run towards your car as the creature hisses "I will describe this as a monst
 later in this document!"
 
 {{pageNumber 2}}
-{{footnote PART 1 | THE ADVENTURE BEGINS}}
+{{footnote }}
 
 \page
+{{page-header
+CALL OF CTHULHU
+}}
 
 ## Later in the Library
 
@@ -161,9 +149,11 @@ it was put here as a trap, you can see in the periphery of your vision
 a long arthropod leg reach for you from the top of the bookshelf...
 
 {{pageNumber 3}}
-{{footnote PART 1 | THE ADVENTURE BEGINS}}
 
 \page
+{{page-header
+PART 2 | CHARACTERS AND MONSTERS
+}}
 
 # Characters and Monsters
 
@@ -269,6 +259,12 @@ takes a 1D10/3D10 of sanity loss.
 
 }}
 
+\page
+
+{{page-header
+CALL OF CTHULHU
+}}
+
 # The end
 
 I hope that this theme can be of use to you in your Call of Cthulhu adventures. This
@@ -276,4 +272,3 @@ theme uses original open source assets, that are inspired by the publisher _Elso
 [_Call of Cthulhu Sverige_](https://eloso.se/coc-sverige) books.
 
 {{pageNumber 4}}
-{{footnote PART 2 | CHARACTERS AND MONSTERS}}

@@ -116,10 +116,41 @@
         
         width: 177.9mm;
         text-align: center;
-            
+    }
+
+    .page-header p {
         font-size: 0.8cm;
 
         color: @pageHeader;
+        mask-image: @grungeTexture9;
+        mask-mode: luminance;
+        mask-size: 100%;
+    }
+
+    .page-header p {
+        overflow: hidden;
+        text-align: center;
+    }
+    
+    .page-header p:before,
+    .page-header p:after {
+        background-color: @pageHeader;
+        content: "";
+        display: inline-block;
+        height: 0.16cm;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+    }
+    
+    .page-header p:before {
+        right: 0.5em;
+        margin-left: -50%;
+    }
+    
+    .page-header p:after {
+        left: 0.5em;
+        margin-right: -50%;
     }
 
     //*****************************
@@ -146,16 +177,17 @@
     // *            NOTE
     // *****************************/
     .note {
-        margin: 0 0 2em 0;
-        background-color: @background;
-        border-style: solid;
-        border-color: transparent;
-        border-width: 4px;
-        /* TODO: Make a nicer frame, add wide note style */
-        border-image: @CoCFramePurple 25 fill;
-        border-image-outset: 14px 0px;
-        border-image-width: 1.5em;
-        padding: 0.13cm 0.16cm;
+        margin: 1.3em 0 1em 0;
+        background-image: @darkBackgroundImage;
+        background-position: center center;
+
+        box-shadow: 5px -2px 20px 1px rgba(0,0,0,0.89);
+        -webkit-box-shadow: 5px -2px 20px 1px rgba(0,0,0,0.89);
+        -moz-box-shadow: 5px -2px 20px 1px rgba(0,0,0,0.89);
+        padding: 1em;
+        
+        border: groove 0.8mm #ffffff20;
+        border-radius: 11px 19px 12px 9px;
 
         h1,
         h2,
@@ -172,17 +204,24 @@
     // ************************************/
     .descriptive {
         margin: 1em 0 1em 0;
-        background-color: @background;
-        border-style: solid;
-        border-color: transparent;
-        border-width: 4px;
-        /* TODO: Figure out a way to mask the background with an svg file and use the svg frame */
+        background-color: transparent;
+        background-image: @backgroundImage;
+        background-position: center center;
+        
+        --mask-radius: 0.6cm;
+        --mask: radial-gradient(
+            var(--mask-radius) at var(--mask-radius) var(--mask-radius),#0000 98%,#000) 
+            calc(var(--mask-radius) * -1) calc(var(--mask-radius) * -1);
+
+        mask: var(--mask);
+
         border-image: @CoCSimpleFrame;
-        border-image-slice: 8% 8% 8% 8% fill;
-        border-image-width: 10px 10px 10px 10px;
-        border-image-outset: 0px 0px 0px 0px;
-        border-image-repeat: stretch stretch; 
-        padding: 0.13cm 0.16cm;
+        border-image-slice: 34%;
+        border-image-width: 25px;
+        border-image-outset: 0px;
+        border-image-repeat: stretch; 
+
+        padding: calc(var(--mask-radius) * 0.8);
 
         h1,
         h2,
@@ -231,6 +270,7 @@
             }
         }
     }
+
 
     //*****************************
     // *           FOOTER
