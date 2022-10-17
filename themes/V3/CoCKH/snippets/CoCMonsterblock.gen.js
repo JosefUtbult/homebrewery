@@ -81,6 +81,15 @@ module.exports = ()=>{
 
 	const attacks = generateAttacks(name, stats['damageBonus']);
 
+	// |  char.  | averages |  rolls    |
+	// |---------|----------|-----------|
+	// |   STR   |   260    | (5D20 x5) |
+	// |   DEX   |   110    | (4D10 x4) |
+	// |   CON   |   150    | (5D10 x6) |
+	// |   INT   |    70    | (4D8  x5) |
+	// |   SIZ   |   220    | (4D20 x5) |
+	// |   POW   |   180    | (6D10 x6) |
+
 	return dedent `
         {{cocCharacter
         

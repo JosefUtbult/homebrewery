@@ -1,6 +1,6 @@
-# The Homebrewery - Call of Cthulhu
+{{titleQuote,wide,center
 
-{{titleQuote,wide
+# The Homebrewery - Call of Cthulhu
 
 At night, when the objective world has slunk back into its cavern and left dreamers
 to their own, there come inspirations and capabilities impossible at any less magical
@@ -9,6 +9,15 @@ writing at night.
 
 ###### H.P. Lovecraft
 
+:::::
+
+}}
+
+
+\page
+
+{{pageHeader
+CALL OF CTHULHU
 }}
 
 Welcome to The Homebrewerys _Call of Cthulhu_ theme. What you are about to read is not
@@ -18,9 +27,8 @@ birth the darkest parts of your mind into this world.
 The quote after the title is a _title quote_. They can either be full or one
 column wide.
 
+{{titleQuote
 ## The adventure begins
-
-{{titleQuote,
 
 Never Explain Anything
 
@@ -73,11 +81,12 @@ a descriptive box instead.
 
 }}
 
+{{pageNumber,auto}}
 
 \page
 
-{{page-header
-PART 1 | THE ADVENTURE BEGINS
+{{pageHeader,auto
+THE ADVENTURE BEGINS
 }}
 
 
@@ -86,6 +95,7 @@ towards you and hands you a torn up piece of paper. On that paper there is some
 text in a way better handwriting than you would assume from a programmer.
 
 {{letter
+{{
 
 ## Letters
 
@@ -95,6 +105,7 @@ useful for a handout or a clue.
 ###### The Programmer
 
 }}
+}}
 
 Suddenly, the creature that you thought where a man starts to shake violently. As
 he mumbles under his breath sharp protrusion starts to grow out of his neck and face,
@@ -103,11 +114,10 @@ and long spider-like legs unveils themselves from under his damp cloths.
 You run towards your car as the creature hisses "I will describe this as a monster
 later in this document!"
 
-{{pageNumber 2}}
-{{footnote }}
+{{pageNumber,auto}}
 
 \page
-{{page-header
+{{pageHeader
 CALL OF CTHULHU
 }}
 
@@ -118,6 +128,7 @@ maddened state, to understand what it was you saw that evening, you stumble upon
 a book.
 
 {{book
+{{
 
 ## Books
 
@@ -142,16 +153,17 @@ sixth level heading to specify an author.
 ###### The Programmer, _How to make books_
 
 }}
+}}
 
 "How did he find me?!" you thought as you slammed the book shut on the table that
-you've been reading it. As you try to make out if this book was here by chans or if
+you've been reading at. As you try to make out if this book was here by chans or if
 it was put here as a trap, you can see in the periphery of your vision
 a long arthropod leg reach for you from the top of the bookshelf...
 
-{{pageNumber 3}}
+{{pageNumber,auto}}
 
 \page
-{{page-header
+{{pageHeader
 PART 2 | CHARACTERS AND MONSTERS
 }}
 
@@ -203,6 +215,8 @@ to drink coffee and work on open source projects.
 
 You can also implement a character or monster using the _monster block_
 
+:
+
 {{cocCharacter
 
 {{cocStatsBlock
@@ -237,12 +251,6 @@ The programmers transformation
 round. He can use them to either deal 6D6 bludgeoning damage or to pinch a smaller
 creature to the ground effectively grappling them.
 
-**Rum breath** :  The Programmer's breath smell of stale food and rum. He can use his
-breath to incapacitate targets for one round. This can only be done to one target at
-a time, and only once per round. This breath can also be ignited due to the large
-quantity of alcohol in his stomach, either for offencive use against the
-investigators, or against itself.
-
 **Great knowledge of embedded systems** : When The Programmer doesn't study or write
 stuff for Homebrewery, he might actually do his job: Working on embedded systems.
 He can ramble on about the pros and cons of using Linux for an embedded platform,
@@ -259,9 +267,11 @@ takes a 1D10/3D10 of sanity loss.
 
 }}
 
+{{pageNumber,auto}}
+
 \page
 
-{{page-header
+{{pageHeader
 CALL OF CTHULHU
 }}
 
@@ -271,4 +281,4 @@ I hope that this theme can be of use to you in your Call of Cthulhu adventures. 
 theme uses original open source assets, that are inspired by the publisher _Elsos_
 [_Call of Cthulhu Sverige_](https://eloso.se/coc-sverige) books.
 
-{{pageNumber 4}}
+{{pageNumber,auto}}

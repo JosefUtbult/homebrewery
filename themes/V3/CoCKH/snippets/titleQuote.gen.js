@@ -53,18 +53,18 @@ const getQuote = function () {
 module.exports = {
 	quote : function (classes) {
 		const _quote = getQuote();
-		return dedent `
+		return dedent `            
+            {{titleQuote${classes !== '' ? ',' : ''}${classes}
+
             #${classes.indexOf('wide') !== -1 ? '' : '#'} ${_quote[0]}
-            
-            {{titleQuote,${classes}
            	
            	${_quote[1]} 
             
             ###### ${_quote[2]}
-            
-            }}
-            
-            `;
+
+            ${classes.indexOf('center') !== -1 ? ':::::' : ''}
+
+            }}\n`;
 	}
 
 };

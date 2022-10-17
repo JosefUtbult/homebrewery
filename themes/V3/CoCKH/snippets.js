@@ -1,8 +1,10 @@
 /* eslint-disable max-lines */
 
+const _ = require('lodash');
 const cocCharacterGen = require('./snippets/CoCCharacter.gen');
 const cocMonsterblockGen = require('./snippets/CoCMonsterblock.gen');
 const titleQuoteGen = require('./snippets/titleQuote.gen');
+const TableOfContentsGen = require('../5ePHB/snippets/tableOfContents.gen');
 const dedent = require('dedent-tabs').default;
 
 
@@ -17,7 +19,7 @@ module.exports = [
 			{
 				name : 'Wide title quote',
 				icon : 'fas fa-quote-right',
-				gen : titleQuoteGen.quote('wide')
+				gen : titleQuoteGen.quote('wide,center')
 			},
 			{
 				name : 'Title quote',
@@ -26,12 +28,12 @@ module.exports = [
 			},
 			{
 				name : 'Character',
-				icon : 'fas fa-mask',
+				icon : 'fas fa-shoe-prints',
 				gen : cocCharacterGen
 			},
 			{
 				name : 'Monsterblock',
-				icon : 'fas fa-spider',
+				icon : 'fas fa-skull',
 				gen : cocMonsterblockGen
 			},
 			{
@@ -64,10 +66,11 @@ module.exports = [
 			},
 			{
 				name : 'Letter',
-				icon : 'fas fa-envelope-open-text',
+				icon : 'fas fa-scroll',
 				gen  : function(){
 					return dedent`
 						{{letter
+						{{
 						## Letter to someone
 		
 						Here is a template to stylize a letter for your investigators
@@ -75,6 +78,7 @@ module.exports = [
 						You can add a signature using the sixth level heading:
 						
 						###### A friend
+						}}
 						}}
 						`;
 				},
@@ -85,6 +89,7 @@ module.exports = [
 				gen  : function(){
 					return dedent`
 						{{book
+						{{
 						## Chapter 1
 		
 						Here is a template to stylize a book for your investigators
@@ -93,16 +98,91 @@ module.exports = [
 						
 						###### The Programmer, _How to make books_
 						}}
+						}}
 						`;
 				},
 			}
 		]
 	},
 
+	/*********************  Text Editor *********************/
+	{
+		groupName : 'Text Editor',
+		icon      : 'fas fa-pencil-alt',
+		view      : 'text',
+		snippets  : [
+			{
+				name : 'Page Header',
+				icon: 'fas fa-quote-left',
+				gen : function(){
+					return '{{pageHeader\nCALL OF CTHULHU\n}}\n'
+				}
+			},
+			{
+				name : 'Page Number',
+				icon : 'fas fa-bookmark',
+				gen  : '{{pageNumber 1}}\n\n'
+			},
+			{
+				name : 'Auto-incrementing Page Number',
+				icon : 'fas fa-sort-numeric-down',
+				gen  : '{{pageNumber,auto}}\n\n'
+			},
+			{
+				name : 'Table of Contents',
+				icon : 'fas fa-book',
+				gen  : TableOfContentsGen
+			}
+		]
+	},
+	
+	/*********************  Images *********************/
+	{
+		groupName : 'Images',
+		icon      : 'fas fa-images',
+		view      : 'text',
+		snippets  : [
+			{
+				name : 'Image',
+				icon : 'fas fa-image',
+				gen  : dedent`
+					![cat warrior](https://s-media-cache-ak0.pinimg.com/736x/4a/81/79/4a8179462cfdf39054a418efd4cb743e.jpg) {width:325px,mix-blend-mode:multiply}
 
+					{{artist,position:relative,top:-230px,left:10px,margin-bottom:-30px
+					##### Cat Warrior
+					[Kyoung Hwan Kim](https://www.artstation.com/tahra)
+					}}`
+			},
+			{
+				name : 'Distressed Image',
+				icon : 'fas fa-stamp',
+				gen  : function() {
+					return dedent`
+					{{distressed${_.random(1, 15)}
+					![cat warrior](https://s-media-cache-ak0.pinimg.com/736x/4a/81/79/4a8179462cfdf39054a418efd4cb743e.jpg) {width:325px,mix-blend-mode:multiply}
+					}}
+
+					{{artist,position:relative,top:-230px,left:10px,margin-bottom:-30px
+					##### Cat Warrior
+					[Kyoung Hwan Kim](https://www.artstation.com/tahra)
+					}}`
+				}
+			},
+			{
+				name : 'Background Image',
+				icon : 'fas fa-tree',
+				gen  : dedent`
+					![homebrew mug](http://i.imgur.com/hMna6G0.png) {position:absolute,top:50px,right:30px,width:280px}
+
+					{{artist,top:80px,right:30px
+					##### Homebrew Mug
+					[naturalcrit](https://homebrew.naturalcrit.com)
+					}}`
+			}
+		]
+	},
 
 	/*********************  TABLES *********************/
-
 	{
 		groupName : 'Tables',
 		icon      : 'fas fa-table',

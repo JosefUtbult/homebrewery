@@ -17,7 +17,7 @@
     background-color: @background;
     /* TODO: Create another backgroun image */
     background-image: @lightBackgroundImage;
-    font-family: CormorantGaramond;
+    font-family: Ovo;
     font-size: 0.38cm;
     font-stretch: expanded;
     padding: 2.0cm 1.9cm 1.8cm;
@@ -47,6 +47,15 @@
         text-indent: 1em;
     }
 
+    p+h1,
+    p+h2,
+    p+h3,
+    p+h4,
+    p+h5 {
+        margin-top: 0.8em;
+    }
+    
+
     strong {
         letter-spacing: -0.02em;
     }
@@ -58,6 +67,15 @@
         &:hover {
             color: red;
         }
+    }
+
+    .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
     }
 
     //*****************************
@@ -107,18 +125,22 @@
         font-size: 0.423cm;
     }
 
+    
+
     //*****************************
     // *      PAGE HEADER
     //*****************************
-    .page-header {
+    .pageHeader {
         position: absolute;
         top: 7mm;
         
         width: 177.9mm;
         text-align: center;
+
+        font-family: NotoSerif;
     }
 
-    .page-header p {
+    .pageHeader p {
         font-size: 0.8cm;
 
         color: @pageHeader;
@@ -127,13 +149,13 @@
         mask-size: 100%;
     }
 
-    .page-header p {
+    .pageHeader p {
         overflow: hidden;
         text-align: center;
     }
     
-    .page-header p:before,
-    .page-header p:after {
+    .pageHeader p:before,
+    .pageHeader p:after {
         background-color: @pageHeader;
         content: "";
         display: inline-block;
@@ -143,12 +165,12 @@
         width: 50%;
     }
     
-    .page-header p:before {
+    .pageHeader p:before {
         right: 0.5em;
         margin-left: -50%;
     }
     
-    .page-header p:after {
+    .pageHeader p:after {
         left: 0.5em;
         margin-right: -50%;
     }
@@ -188,6 +210,8 @@
         
         border: groove 0.8mm #ffffff20;
         border-radius: 11px 19px 12px 9px;
+
+        font-family: Inconsolata;
 
         h1,
         h2,
@@ -271,6 +295,92 @@
         }
     }
 
+    .distressed1,
+    .distressed2,
+    .distressed3,
+    .distressed4,
+    .distressed5,
+    .distressed6,
+    .distressed7,
+    .distressed8,
+    .distressed9,
+    .distressed10,
+    .distressed11,
+    .distressed12,
+    .distressed13,
+    .distressed14,
+    .distressed15
+    {
+        mask-size: 100% 100%;
+        mix-blend-mode: multiply;
+        mask-mode: luminance;
+
+        p {
+            mask-size: 100% 100%;
+            mix-blend-mode: multiply;
+        }
+    }
+
+    .distressed1 {
+        mask-image: @grungeTexture1;
+    }
+
+    .distressed2 {
+        mask-image: @grungeTexture2;
+    }
+
+    .distressed3 {
+        mask-image: @grungeTexture3;
+    }
+
+    .distressed4 {
+        mask-image: @grungeTexture4;
+    }
+
+    .distressed5 {
+        mask-image: @grungeTexture5;
+    }
+
+    .distressed6 {
+        mask-image: @grungeTexture6;
+    }
+
+    .distressed7 {
+        mask-image: @grungeTexture7;
+    }
+
+    .distressed8 {
+        mask-image: @grungeTexture8;
+    }
+
+    .distressed9 {
+        mask-image: @grungeTexture9;
+    }
+
+    .distressed10 {
+        mask-image: @grungeTexture10;
+    }
+
+    .distressed11 {
+        mask-image: @grungeTexture11;
+    }
+
+    .distressed12 {
+        mask-image: @grungeTexture12;
+    }
+
+    .distressed13 {
+        mask-image: @grungeTexture13;
+    }
+
+    .distressed14 {
+        mask-image: @grungeTexture14;
+    }
+
+    .distressed15 {
+        mask-image: @grungeTexture15;
+    }
+
 
     //*****************************
     // *           FOOTER
@@ -328,9 +438,9 @@
         text-indent: 1em;
     }
 
-//*****************************
-// *      TABLE OF CONTENTS
-// *****************************/
+    //*****************************
+    // *      TABLE OF CONTENTS
+    // *****************************/
     .toc {
         -webkit-column-break-inside: avoid;
         page-break-inside: avoid;
@@ -467,25 +577,17 @@
         }
     }
 
-//*****************************
-// *  Character/Monster block
-// *****************************/
+    //*****************************
+    // *  Character/Monster block
+    // *****************************/
     .cocCharacter {
-        margin-bottom: 1.5em;
+        margin-top: 0;
+        margin-bottom: .4em;
     }
 
     .cocStatsBlock {
-        text-align: center;
-        margin: 1em 0 3em 0;
-        background-color: @background;
-        border-style: solid;
-        border-width: 4px;
-        border-color: transparent;
-        /* TODO: Make a nicer frame */
-        border-image: @CoCFrameBlack 25 fill;
-        border-image-outset: 14px 0px;
-        border-image-width: 1.5em;
-        padding: 0.13cm 0.16cm;
+        text-align: left;
+        margin: 0 0 0.4em 0;
 
         h1,
         h2,
@@ -493,6 +595,7 @@
         h4,
         h5,
         h6 {
+            text-align: left;
             border-bottom: none;
             font-family: NotoSerifDisplay;
         }
@@ -522,12 +625,12 @@
             margin-bottom: .08cm;
         }
 
-        table tbody tr:nth-child(odd) {
-            background-color: @note;
+        table {
+            margin-top: 0.2em;
         }
-
-        table tbody tr td:nth-child(even) {
-            padding: .07em;
+        
+        td, th {
+            padding-left: 0;
         }
     }
 
@@ -550,11 +653,14 @@
         text-indent: -1em !important;
     }
 
+    p+.cocCharacter {
+        margin-top: 0.8em;
+    }
+
     // *****************************
     // *       Title Quote
     // *****************************/
     h1 + .titleQuote {
-        padding-top: 0.4em;
         margin-bottom: 1.2em;
     }
 
@@ -583,22 +689,40 @@
         }
     }
 
-    .titleQuote.wide {
-        margin-bottom: 3.2em;
+    // *****************************
+    // *     Letter and Books
+    // *****************************/
+    .letter, .book {
+        // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-filter: drop-shadow(1px 1px 4px rgba(0,0,0,0.75));
+        -moz-filter: drop-shadow(1px 1px 4px rgba(0,0,0,0.75));
+        -ms-filter: drop-shadow(1px 1px 4px rgba(0,0,0,0.75));
+        -o-filter: drop-shadow(1px 1px 4px rgba(0,0,0,0.75));
+
+        margin: 1em 0;
     }
 
-    // *****************************
-    // *       Letter
-    // *****************************/
-    .letter {
+    .letter div, .book div {
         background-image: @backgroundImage;
         padding: 2em;
 
+        color: #0d1431;
+
+        mask-size: 100% 100%;
+
+        .blank {
+            background: transparent;
+            background-image: none;
+        }
+    }
+
+    .letter div {
         border: thin solid rgba(255, 255, 255, .1);
         border-radius: 5px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        font-family: Tangerine;
+        font-weight: 400;
 
-        margin-bottom: 2em;
+        mask-image: @CoCLetterMask;
 
         h1,
         h2,
@@ -608,8 +732,6 @@
         h6,
         p {
             font-family: Tangerine;
-            font-weight: 400;
-            color: #0d1431;
         }
 
         h1 {
@@ -651,19 +773,11 @@
         }
     }
 
-    // *****************************
-    // *           Bok
-    // *****************************/
-
-    .book {
+    .book div {
         background-image: @backgroundImage;
         padding: 2em;
 
-        border: solid rgba(255, 255, 255, .1);
-        border-radius: 5px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-        margin-bottom: 2em;
+        mask-image: @CoCBookMask;
 
         h1,
         h2,
