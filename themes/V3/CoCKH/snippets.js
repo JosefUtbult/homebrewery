@@ -158,7 +158,7 @@ module.exports = [
 				icon : 'fas fa-stamp',
 				gen  : function() {
 					return dedent`
-					{{distressed${_.random(1, 15)}
+					{{distressed${_.random(1, 15)},mask-size:100%100%,mask-position-x:left,mask-position-y:top
 					![cat warrior](https://s-media-cache-ak0.pinimg.com/736x/4a/81/79/4a8179462cfdf39054a418efd4cb743e.jpg) {width:325px,mix-blend-mode:multiply}
 					}}
 

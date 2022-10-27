@@ -325,12 +325,11 @@ module.exports = ()=>{
 
 	return dedent`
         {{cocCharacter
+        ### ${person['name']}
+        ${occupation} from ${person['home']}
 
         {{cocStatsBlock
-
-        ### ${person['name']}
-        
-        ${occupation} from ${person['home']}
+        #### ${person['name']}
         
         |        |        |        |        |
         | ------ | ------ | ------ | ------ |

@@ -20,7 +20,7 @@
     font-family: Ovo;
     font-size: 0.38cm;
     font-stretch: expanded;
-    padding: 2.0cm 1.9cm 1.8cm;
+    padding: 2.2cm 1.9cm 1.8cm;
 
     //*****************************
     // *            BASE
@@ -268,8 +268,8 @@
     .artist {
         position: absolute;
         width: auto;
-        text-align: center;
-        font-family: WalterTurncoat;
+        text-align: left;
+        font-family: SpecialElite;
         font-size: 0.27cm;
         color: @headingText;
 
@@ -282,7 +282,7 @@
 
         h5 {
             font-size: 1.3em;
-            font-family: WalterTurncoat;
+            font-family: SpecialElite;
         }
 
         a {
@@ -314,6 +314,7 @@
         mask-size: 100% 100%;
         mix-blend-mode: multiply;
         mask-mode: luminance;
+        margin-top: 0;
 
         p {
             mask-size: 100% 100%;
@@ -446,16 +447,7 @@
         page-break-inside: avoid;
         break-inside: avoid;
 
-        background-color: @background;
-        border-style: solid;
-        border-width: 4px;
-        border-color: transparent;
-        /* TODO: Make a nicer frame, change to wide frame */
-        border-image: @CoCFrameBlack 25 fill;
-        border-image-outset: 14px 0px;
-        border-image-width: 1.5em;
-
-        padding: 2em 1em;
+        padding: 0.2em 1em;
 
         h1 {
             margin-bottom: .6em;
@@ -478,7 +470,6 @@
 
         h3 {
             font-size: 0.45cm;
-            margin-top: 1cm;
             margin-bottom: 0.3cm;
             border-bottom: solid thin @headingText;
 
@@ -493,7 +484,7 @@
             margin-bottom: .12cm;
 
             span {
-                padding-top: 2px;
+                padding-top: 3px;
             }
         }
 
@@ -568,7 +559,7 @@
 
             ul {
                 /*List indent*/
-                margin-left: 1em;
+                margin-left: 0;
             }
         }
 
@@ -583,6 +574,17 @@
     .cocCharacter {
         margin-top: 0;
         margin-bottom: .4em;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-align: left;
+            border-bottom: none;
+            font-family: NotoSerifDisplay;
+        }
     }
 
     .cocStatsBlock {
@@ -632,6 +634,11 @@
         td, th {
             padding-left: 0;
         }
+
+        tr th {
+            font-style: italic;
+            font-weight: 400;
+        }
     }
 
     .cocCharacter p strong:not(:first-child) {
@@ -655,6 +662,10 @@
 
     p+.cocCharacter {
         margin-top: 0.8em;
+    }
+
+    p+.cocStatsBlock {
+        padding-top: 1em;
     }
 
     // *****************************

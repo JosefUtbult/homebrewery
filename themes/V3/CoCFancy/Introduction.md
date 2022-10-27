@@ -13,6 +13,26 @@ writing at night.
 
 }}
 
+\page
+
+{{toc,wide
+# Table Of Contents
+
+- ### [{{ The Homebrewery - Call of Cthulhu}}{{ 1}}](#p1)
+  - #### [{{ The adventure begins}}{{ 3}}](#p3)
+  - #### [{{ Letters}}{{ 4}}](#p4)
+  - #### [{{ Images}}{{ 5}}](#p5)
+    - [{{ Distressed images}}{{ 5}}](#p5)
+  - #### [{{ Later in the Library}}{{ 6}}](#p6)
+  - #### [{{ Books}}{{ 6}}](#p6)
+- ### [{{ Characters and Monsters}}{{ 7}}](#p7)
+  - #### [{{ The Programmer}}{{ 7}}](#p7)
+  - #### [{{  The Programmer - Arthropod form}}{{ 7}}](#p7)
+- ### [{{ The end}}{{ 8}}](#p8)
+}}
+
+
+
 
 \page
 
@@ -117,8 +137,47 @@ later in this document!"
 {{pageNumber,auto}}
 
 \page
+
 {{pageHeader
 CALL OF CTHULHU
+}}
+
+
+![Cthulhu Awakens](https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4eb615c8-cc28-4177-99a0-68c34eec5362/dfa3ajm-c5eb2ec9-d0f4-4320-939a-f1a1b755949f.jpg/v1/fill/w_900,h_1215,q_75,strp/priest_of_the_insect_god_by_prophetharm_dfa3ajm-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTIxNSIsInBhdGgiOiJcL2ZcLzRlYjYxNWM4LWNjMjgtNDE3Ny05OWEwLTY4YzM0ZWVjNTM2MlwvZGZhM2FqbS1jNWViMmVjOS1kMGY0LTQzMjAtOTM5YS1mMWExYjc1NTk0OWYuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.9sIDRJ0Ab3ppAOKBFEZnZnf5g5wtTFG37MggMjKSDJw) {width:325px,mix-blend-mode:multiply}
+
+{{artist,position:relative,bottom:10px,left:30px,margin-bottom:-30px
+##### Priest Of The Insect God
+[prophetharm](https://www.deviantart.com/prophetharm)
+}}
+
+
+## Images
+Later that fatefull night you turn in your bed, hopelessly trying to sleep after seing that wretched thing. As your eyelids starts getting heavy, you're suddenly woken up by the faint sound of tapping steps from behind your bedroom door. You watch as something is slid under the doorway. When walking closer you can dissern this to be a polaroid image. That gnarling voice you heard earlier today can be heard from behind the door, now forming something akin to human speach.
+
+"Here is an image of me from my high school prom. Notice how the white frame around the image is blended into the background, leaving the gray inner background with the hand popping out of its frame".
+
+
+{{distressed7,mask-size:110%115%,mask-position-x:left,mask-position-y:bottom
+![Cthulhu Awakens](https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4eb615c8-cc28-4177-99a0-68c34eec5362/dfa3ajm-c5eb2ec9-d0f4-4320-939a-f1a1b755949f.jpg/v1/fill/w_900,h_1215,q_75,strp/priest_of_the_insect_god_by_prophetharm_dfa3ajm-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTIxNSIsInBhdGgiOiJcL2ZcLzRlYjYxNWM4LWNjMjgtNDE3Ny05OWEwLTY4YzM0ZWVjNTM2MlwvZGZhM2FqbS1jNWViMmVjOS1kMGY0LTQzMjAtOTM5YS1mMWExYjc1NTk0OWYuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.9sIDRJ0Ab3ppAOKBFEZnZnf5g5wtTFG37MggMjKSDJw) {width:325px,mix-blend-mode:multiply}
+}}
+
+{{artist,position:relative,bottom:10px,left:30px,margin-bottom:-30px
+##### Priest Of The Insect God
+[prophetharm](https://www.deviantart.com/prophetharm)
+}}
+
+### Distressed images
+The polaroid picture suddenly ages in your hand, showing folds an wear in the picture.
+"Now the image has a distressed mask over it, adding a bit of grungy texture to show its age. There are fifteen textures that can be selected by putting an element inside the _distressed_ tag. You can change the texture by swapping the name of the images tag to _distressed1_ through _distressed15_. You can also play around with the mask size and position to get different effects".
+
+As you slam open the door ready to either fight or flee from your own home, no one is there. Your livingroom is dark and empty.
+
+{{pageNumber,auto}}
+
+
+\page
+{{pageHeader
+Later in the Library
 }}
 
 ## Later in the Library
@@ -145,8 +204,6 @@ used for:
 
 - Documents
 
-:
-
 and a lot more. Note also that you can, both in books, letters and quotes, use a
 sixth level heading to specify an author.
 
@@ -164,7 +221,7 @@ a long arthropod leg reach for you from the top of the bookshelf...
 
 \page
 {{pageHeader
-PART 2 | CHARACTERS AND MONSTERS
+CALL OF CTHULHU
 }}
 
 # Characters and Monsters
@@ -174,11 +231,11 @@ _monster_ block. Here is a character using the _character_ block.
 
 {{cocCharacter
 
-{{cocStatsBlock
-
 ### The Programmer
 
 The man that you met on the street
+
+{{cocStatsBlock
 
 |        |        |        |        |
 |--------|--------|--------|--------|
@@ -213,22 +270,26 @@ _The Programmer_ is, in his human form, a scrappy looking man wearing glasses an
 Hawaiian shirt. When he doesn't spend his evenings out on dark country roads he likes
 to drink coffee and work on open source projects.
 
+
+
 You can also implement a character or monster using the _monster block_
 
-:
-
 {{cocCharacter
-
-{{cocStatsBlock
 
 ###  The Programmer - Arthropod form
 
 The programmers transformation
 
-|         |         |         |
-|---------|---------|---------|
-| STR 260 | CON 150 | SIZ 220 |
-| DEX 110 | INT 70  | POW 180 | 
+{{cocStatsBlock
+
+|  char.  | averages |  rolls    |
+|---------|----------|-----------|
+|   STR   |   350    | 7d20x5    |
+|   DEX   |   280    | 6d20x5    |
+|   CON   |   350    | 7d20x5    |
+|   INT   |   265    | 5d20x5    |
+|   SIZ   |   270    | 9d12x5    |
+|   POW   |   330    | 11d12x5   |
 
 }}
 
@@ -245,7 +306,7 @@ The programmers transformation
 **Move**              : 10
 
 
-### Attacks
+#### Attacks
 
 **Spider legs** :  The Programmer can attack with four of his eight legs every
 round. He can use them to either deal 6D6 bludgeoning damage or to pinch a smaller
@@ -258,7 +319,7 @@ verses using a real time system instead. This will put every living creature wit
 hearing distance to sleep, and they might only wake up after the rambling is over
 or by external force.
 
-**Armor**: 280 points of armor.
+**Armor**: 20 points of armor.
 
 **Spells**: The programmer can transform back to his human form at will.
 
@@ -272,7 +333,7 @@ takes a 1D10/3D10 of sanity loss.
 \page
 
 {{pageHeader
-CALL OF CTHULHU
+Part 4: The end
 }}
 
 # The end
@@ -282,3 +343,4 @@ theme uses original open source assets, that are inspired by the publisher _Elso
 [_Call of Cthulhu Sverige_](https://eloso.se/coc-sverige) books.
 
 {{pageNumber,auto}}
+
