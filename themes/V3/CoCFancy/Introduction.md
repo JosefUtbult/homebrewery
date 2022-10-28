@@ -101,6 +101,7 @@ a descriptive box instead.
 
 }}
 
+
 {{pageNumber,auto}}
 
 \page
@@ -134,6 +135,9 @@ and long spider-like legs unveils themselves from under his damp cloths.
 You run towards your car as the creature hisses "I will describe this as a monster
 later in this document!"
 
+
+{{watercolor11,top:16cm,right:1cm,width:300px,background-color:#d9d3c1,opacity:80%}}
+
 {{pageNumber,auto}}
 
 \page
@@ -157,7 +161,7 @@ Later that fatefull night you turn in your bed, hopelessly trying to sleep after
 "Here is an image of me from my high school prom. Notice how the white frame around the image is blended into the background, leaving the gray inner background with the hand popping out of its frame".
 
 
-{{distressed7,mask-size:110%115%,mask-position-x:left,mask-position-y:bottom
+{{distressed7
 ![Cthulhu Awakens](https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4eb615c8-cc28-4177-99a0-68c34eec5362/dfa3ajm-c5eb2ec9-d0f4-4320-939a-f1a1b755949f.jpg/v1/fill/w_900,h_1215,q_75,strp/priest_of_the_insect_god_by_prophetharm_dfa3ajm-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTIxNSIsInBhdGgiOiJcL2ZcLzRlYjYxNWM4LWNjMjgtNDE3Ny05OWEwLTY4YzM0ZWVjNTM2MlwvZGZhM2FqbS1jNWViMmVjOS1kMGY0LTQzMjAtOTM5YS1mMWExYjc1NTk0OWYuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.9sIDRJ0Ab3ppAOKBFEZnZnf5g5wtTFG37MggMjKSDJw) {width:325px,mix-blend-mode:multiply}
 }}
 
@@ -168,9 +172,11 @@ Later that fatefull night you turn in your bed, hopelessly trying to sleep after
 
 ### Distressed images
 The polaroid picture suddenly ages in your hand, showing folds an wear in the picture.
-"Now the image has a distressed mask over it, adding a bit of grungy texture to show its age. There are fifteen textures that can be selected by putting an element inside the _distressed_ tag. You can change the texture by swapping the name of the images tag to _distressed1_ through _distressed15_. You can also play around with the mask size and position to get different effects".
+"Now the image has a distressed mask over it, adding a bit of grungy texture to show its age. There are fifteen textures that can be selected by putting an element inside the _distressed_ tag. You can change the texture by swapping the name of the images tag to _distressed1_ through _distressed15_.
 
 As you slam open the door ready to either fight or flee from your own home, no one is there. Your livingroom is dark and empty.
+
+:::
 
 {{pageNumber,auto}}
 
@@ -338,9 +344,9 @@ Part 4: The end
 
 # The end
 
-I hope that this theme can be of use to you in your Call of Cthulhu adventures. This
-theme uses original open source assets, that are inspired by the publisher _Elsos_
-[_Call of Cthulhu Sverige_](https://eloso.se/coc-sverige) books.
+I hope that this theme can be of use to you in your Call of Cthulhu adventures. The CoC KH theme uses original open source assets, that are inspired by [_The Keepers Handbook_](https://www.chaosium.com/call-of-cthulhu-keeper-rulebook-hardcover) by _Chaosium Inc_.
+
+The CoC SE theme uses original open source assets, that are inspired by the publisher _Elsos_ [_Call of Cthulhu Sverige_](https://eloso.se/coc-sverige) books.
 
 {{pageNumber,auto}}
 

@@ -9,7 +9,8 @@
 @headingUnderline : #8d8187; // Gray purple
 @headingText : #010613; // Dark maroon
 @pageHeader : #58595b;
-@watercolorStain : #BBAD82; // Light brown
+@pageNumber: #bfb498;
+@watercolorStain : #bbad82; // Light brown
 
 .page {
     .useColumns();
@@ -83,6 +84,49 @@
     // *****************************/
     h1,
     h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        a:link { 
+            text-decoration: none; 
+        }
+
+        a:visited { 
+            text-decoration: none; 
+        }
+
+        a:hover { 
+            text-decoration: none; 
+        }
+
+        a:active { 
+            text-decoration: none; 
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        margin-top: 0;
+    }
+
+    *:not(.pageHeader) {
+        &+h1,
+        &+h2,
+        &+h3,
+        &+h4,
+        &+h5,
+        &+h6
+        {
+            margin-top: 0.6em !important;
+        }
+    }
+
+    h1,
+    h2,
     h3 {
         font-family: Merriweather;
         font-weight: 800;
@@ -144,9 +188,13 @@
         font-size: 0.8cm;
 
         color: @pageHeader;
-        mask-image: @grungeTexture9;
+        mask-image: @grungeTexture9-black !important;
+        -webkit-mask-image: @grungeTexture9-alpha;
         mask-mode: luminance;
+        mask-position: center;
+        -webkit-mask-position: center;
         mask-size: 100%;
+        -webkit-mask-size: 100%;
     }
 
     .pageHeader p {
@@ -238,13 +286,11 @@
             calc(var(--mask-radius) * -1) calc(var(--mask-radius) * -1);
 
         mask: var(--mask);
+        -webkit-mask: var(--mask);
 
-        border-image: @CoCSimpleFrame;
-        border-image-slice: 34%;
-        border-image-width: 25px;
-        border-image-outset: 0px;
-        border-image-repeat: stretch; 
-
+        border: 10px solid transparent;
+        // 35% slice, 25px width
+        border-image: @CoCSimpleFrame 34.5% ~"/" 25px stretch;
         padding: calc(var(--mask-radius) * 0.8);
 
         h1,
@@ -311,10 +357,15 @@
     .distressed14,
     .distressed15
     {
-        mask-size: 100% 100%;
         mix-blend-mode: multiply;
-        mask-mode: luminance;
+        // mask-mode: al;
         margin-top: 0;
+        
+        mask-size: 100% 100%;
+        -webkit-mask-size: 100% 100%;
+        mask-position: center;
+        -webkit-mask-position: center;
+        mask-mode: luminance;
 
         p {
             mask-size: 100% 100%;
@@ -322,64 +373,81 @@
         }
     }
 
+    // Use the luminance version of the grunge textures if possible, as this is the original
+    // and looks a bit better
     .distressed1 {
-        mask-image: @grungeTexture1;
+        mask-image: @grungeTexture1-black !important;
+        -webkit-mask-image: @grungeTexture1-alpha;
     }
 
     .distressed2 {
-        mask-image: @grungeTexture2;
+        mask-image: @grungeTexture2-black !important;
+        -webkit-mask-image: @grungeTexture2-alpha;
     }
 
     .distressed3 {
-        mask-image: @grungeTexture3;
+        mask-image: @grungeTexture3-black !important;
+        -webkit-mask-image: @grungeTexture3-alpha;
     }
 
     .distressed4 {
-        mask-image: @grungeTexture4;
+        mask-image: @grungeTexture4-black !important;
+        -webkit-mask-image: @grungeTexture4-alpha;
     }
 
     .distressed5 {
-        mask-image: @grungeTexture5;
+        mask-image: @grungeTexture5-black !important;
+        -webkit-mask-image: @grungeTexture5-alpha;
     }
 
     .distressed6 {
-        mask-image: @grungeTexture6;
+        mask-image: @grungeTexture6-black !important;
+        -webkit-mask-image: @grungeTexture6-alpha;
     }
 
     .distressed7 {
-        mask-image: @grungeTexture7;
+        mask-image: @grungeTexture7-black !important;
+        -webkit-mask-image: @grungeTexture7-alpha;
     }
 
     .distressed8 {
-        mask-image: @grungeTexture8;
+        mask-image: @grungeTexture8-black !important;
+        -webkit-mask-image: @grungeTexture8-alpha;
     }
 
     .distressed9 {
-        mask-image: @grungeTexture9;
+        mask-image: @grungeTexture9-black !important;
+        -webkit-mask-image: @grungeTexture9-alpha;
     }
 
     .distressed10 {
-        mask-image: @grungeTexture10;
+        mask-image: @grungeTexture10-black !important;
+        -webkit-mask-image: @grungeTexture10-alpha;
     }
 
     .distressed11 {
-        mask-image: @grungeTexture11;
+        mask-image: @grungeTexture11-black !important;
+        -webkit-mask-image: @grungeTexture11-alpha;
     }
 
     .distressed12 {
-        mask-image: @grungeTexture12;
+        mask-image: @grungeTexture12-black !important;
+        -webkit-mask-image: @grungeTexture12-alpha;
     }
 
     .distressed13 {
-        mask-image: @grungeTexture13;
+        mask-image: @grungeTexture13-black !important;
+        -webkit-mask-image: @grungeTexture13-alpha;
     }
 
     .distressed14 {
-        mask-image: @grungeTexture14;
+        mask-image: @grungeTexture14-black !important;
+        -webkit-mask-image: @grungeTexture14-alpha;
     }
 
     .distressed15 {
-        mask-image: @grungeTexture15;
+        mask-image: @grungeTexture15-black !important;
+        -webkit-mask-image: @grungeTexture15-alpha;
     }
 
 
@@ -399,23 +467,30 @@
 
     .pageNumber {
         position: absolute;
-        right: calc(50% - 16px);
-        bottom: 22px;
         width: 32px;
         height: 32px;
         padding-top: 8px;
         font-size: 16px;
+        bottom: 22px;
+        --x-position: 22px;
 
-        border: thin solid @headingText;
-        border-radius: 50%;
+        font-family: NotoSerif;
+        color: @pageNumber;
 
-        color: @headingText;
         text-align: center;
         text-indent: 0;
 
         &.auto::after {
             content: counter(phb-page-numbers);
         }
+    }
+
+    &:nth-child(odd) .pageNumber {
+        left: var(--x-position);
+    }
+
+    &:nth-child(even) .pageNumber {
+        right: var(--x-position);
     }
 
     .footnote {
@@ -566,6 +641,22 @@
         &.wide {
             .useColumns(0.96, @fillMode: balance);
         }
+
+        a:link { 
+            text-decoration: none; 
+        }
+
+        a:visited { 
+            text-decoration: none; 
+        }
+
+        a:hover { 
+            text-decoration: none; 
+        }
+
+        a:active { 
+            text-decoration: none; 
+        }
     }
 
     //*****************************
@@ -709,6 +800,7 @@
         -moz-filter: drop-shadow(1px 1px 4px rgba(0,0,0,0.75));
         -ms-filter: drop-shadow(1px 1px 4px rgba(0,0,0,0.75));
         -o-filter: drop-shadow(1px 1px 4px rgba(0,0,0,0.75));
+        filter: drop-shadow(1px 1px 4px rgba(0,0,0,0.75));
 
         margin: 1em 0;
     }
@@ -720,6 +812,7 @@
         color: #0d1431;
 
         mask-size: 100% 100%;
+	    -webkit-mask-size:100% 100%;
 
         .blank {
             background: transparent;
@@ -734,6 +827,7 @@
         font-weight: 400;
 
         mask-image: @CoCLetterMask;
+        -webkit-mask-image: @CoCLetterMask;
 
         h1,
         h2,
@@ -789,6 +883,7 @@
         padding: 2em;
 
         mask-image: @CoCBookMask;
+        -webkit-mask-image: @CoCBookMask;
 
         h1,
         h2,
