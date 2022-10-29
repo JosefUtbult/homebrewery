@@ -156,11 +156,11 @@ CALL OF CTHULHU
 
 
 ## Images
-Later that fatefull night you turn in your bed, hopelessly trying to sleep after seing that wretched thing. As your eyelids starts getting heavy, you're suddenly woken up by the faint sound of tapping steps from behind your bedroom door. You watch as something is slid under the doorway. When walking closer you can dissern this to be a polaroid image. That gnarling voice you heard earlier today can be heard from behind the door, now forming something akin to human speach.
+Later that fateful night you turn in your bed, hopelessly trying to sleep after seeing that wretched thing. As your eyelids starts getting heavy, you're suddenly woken up by the faint sound of tapping steps from behind your bedroom door. You watch as something is slid under the doorway. When walking closer you can discern this to be a polaroid picture. That gnarling voice you heard earlier today can be heard from behind the door, now forming something akin to human speech.
 
 "Here is an image of me from my high school prom. Notice how the white frame around the image is blended into the background, leaving the gray inner background with the hand popping out of its frame".
 
-
+<!-- Change distressed7 to another number from 1 to 15 to get another texture -->
 {{distressed7
 ![Cthulhu Awakens](https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4eb615c8-cc28-4177-99a0-68c34eec5362/dfa3ajm-c5eb2ec9-d0f4-4320-939a-f1a1b755949f.jpg/v1/fill/w_900,h_1215,q_75,strp/priest_of_the_insect_god_by_prophetharm_dfa3ajm-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTIxNSIsInBhdGgiOiJcL2ZcLzRlYjYxNWM4LWNjMjgtNDE3Ny05OWEwLTY4YzM0ZWVjNTM2MlwvZGZhM2FqbS1jNWViMmVjOS1kMGY0LTQzMjAtOTM5YS1mMWExYjc1NTk0OWYuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.9sIDRJ0Ab3ppAOKBFEZnZnf5g5wtTFG37MggMjKSDJw) {width:325px,mix-blend-mode:multiply}
 }}
@@ -171,10 +171,10 @@ Later that fatefull night you turn in your bed, hopelessly trying to sleep after
 }}
 
 ### Distressed images
-The polaroid picture suddenly ages in your hand, showing folds an wear in the picture.
+The polaroid suddenly ages in your hand, showing folds an wear in the picture.
 "Now the image has a distressed mask over it, adding a bit of grungy texture to show its age. There are fifteen textures that can be selected by putting an element inside the _distressed_ tag. You can change the texture by swapping the name of the images tag to _distressed1_ through _distressed15_.
 
-As you slam open the door ready to either fight or flee from your own home, no one is there. Your livingroom is dark and empty.
+As you slam open the door ready to either fight or flee from your own home, no one is there. Your living room is dark and empty.
 
 :::
 

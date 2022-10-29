@@ -48,15 +48,6 @@
         text-indent: 1em;
     }
 
-    p+h1,
-    p+h2,
-    p+h3,
-    p+h4,
-    p+h5 {
-        margin-top: 0.8em;
-    }
-    
-
     strong {
         letter-spacing: -0.02em;
     }
@@ -121,7 +112,7 @@
         &+h5,
         &+h6
         {
-            margin-top: 0.6em !important;
+            margin-top: 0.6em;
         }
     }
 
@@ -147,17 +138,9 @@
         margin-bottom: .2cm;
     }
 
-    p+h2 {
-        margin-top: .8em
-    }
-
     h3 {
         font-size: 0.575cm;
         margin-bottom: .16cm;
-    }
-
-    p+h3 {
-        margin-top: .8em;
     }
 
     h4 {
@@ -251,9 +234,9 @@
         background-image: @darkBackgroundImage;
         background-position: center center;
 
-        box-shadow: 5px -2px 20px 1px rgba(0,0,0,0.89);
-        -webkit-box-shadow: 5px -2px 20px 1px rgba(0,0,0,0.89);
-        -moz-box-shadow: 5px -2px 20px 1px rgba(0,0,0,0.89);
+        box-shadow: 5px 1px 16px 1px rgb(0 0 0 / 70%);
+        -webkit-box-shadow: 5px 1px 16px 1px rgb(0 0 0 / 70%);
+        -moz-box-shadow: 5px 1px 16px 1px rgb(0 0 0 / 70%);
         padding: 1em;
         
         border: groove 0.8mm #ffffff20;
@@ -277,21 +260,13 @@
     .descriptive {
         margin: 1em 0 1em 0;
         background-color: transparent;
-        background-image: @backgroundImage;
-        background-position: center center;
-        
-        --mask-radius: 0.6cm;
-        --mask: radial-gradient(
-            var(--mask-radius) at var(--mask-radius) var(--mask-radius),#0000 98%,#000) 
-            calc(var(--mask-radius) * -1) calc(var(--mask-radius) * -1);
 
-        mask: var(--mask);
-        -webkit-mask: var(--mask);
-
-        border: 10px solid transparent;
-        // 35% slice, 25px width
-        border-image: @CoCSimpleFrame 34.5% ~"/" 25px stretch;
-        padding: calc(var(--mask-radius) * 0.8);
+        background-color    : transparent;
+		border-style        : solid;
+		border-width        : 7px;
+		border-image        : @CoCSimpleFrame 27 fill ~"/" 20px;
+		border-image-outset : 4px;
+		padding             : 14px;
 
         h1,
         h2,
@@ -756,24 +731,14 @@
     }
 
     p+.cocStatsBlock {
-        padding-top: 1em;
+        padding-top: 0.2em;
     }
 
     // *****************************
     // *       Title Quote
     // *****************************/
-    h1 + .titleQuote {
-        margin-bottom: 1.2em;
-    }
-
-    h2 + .titleQuote {
-        margin-top: 0;
-        padding-top: 0;
-        margin-bottom: 0.6em;
-    }
 
     .titleQuote {
-
         p, h6 {
             font-family: Tangerine;
             margin: 0 10% .1em;
